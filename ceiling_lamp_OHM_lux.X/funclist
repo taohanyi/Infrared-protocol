@@ -1,0 +1,18 @@
+_ReadDataFromFlash: CODE, 966 0 19
+_WritePwmPercentage: CODE, 436 0 124
+_ISR: CODE, 4 0 70
+_SaveDataToFlash: CODE, 642 0 51
+_flash_memory_read: CODE, 852 0 31
+_main: CODE, 820 0 32
+_TimeBase: CODE, 693 0 47
+_Initialize: CODE, 786 0 34
+__initialization: CODE, 75 0 10
+_BzSet: CODE, 985 0 17
+_flash_memory_erase: CODE, 740 0 46
+_IrRcv: CODE, 304 0 132
+_flash_memory_write: CODE, 560 0 82
+_IrDeal: CODE, 87 0 217
+_CheckIr: CODE, 943 0 23
+___wmul: CODE, 913 0 30
+_GetIrAN: CODE, 883 0 30
+Total: 995

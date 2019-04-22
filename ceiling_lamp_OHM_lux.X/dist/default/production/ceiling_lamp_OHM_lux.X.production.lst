@@ -1,0 +1,3495 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.30 build 55553 
+                                                                                               Mon Apr 21 10:14:36 2014
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 55553
+     1                           	processor	12F1501
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bitbssCOMMON,global,bit,class=COMMON,space=1,delta=1
+     7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	clrtext,global,class=CODE,delta=2
+    10                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    11                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    12                           	psect	maintext,global,class=CODE,merge=1,split=1,delta=2
+    13                           	psect	text1,local,class=CODE,merge=1,delta=2
+    14                           	psect	text2,local,class=CODE,merge=1,delta=2
+    15                           	psect	text3,local,class=CODE,merge=1,delta=2
+    16                           	psect	text4,local,class=CODE,merge=1,delta=2
+    17                           	psect	text5,local,class=CODE,merge=1,delta=2
+    18                           	psect	text6,local,class=CODE,merge=1,delta=2
+    19                           	psect	text7,local,class=CODE,merge=1,delta=2
+    20                           	psect	text8,local,class=CODE,merge=1,delta=2
+    21                           	psect	text9,local,class=CODE,merge=1,delta=2
+    22                           	psect	text10,local,class=CODE,merge=1,delta=2
+    23                           	psect	text11,local,class=CODE,merge=1,delta=2
+    24                           	psect	text12,local,class=CODE,merge=1,delta=2
+    25                           	psect	text13,local,class=CODE,merge=1,delta=2
+    26                           	psect	intentry,global,class=CODE,delta=2
+    27                           	psect	text15,local,class=CODE,merge=1,delta=2
+    28                           	dabs	1,0x7E,2
+    29  0000                     	;# 
+    30  0001                     	;# 
+    31  0002                     	;# 
+    32  0003                     	;# 
+    33  0004                     	;# 
+    34  0005                     	;# 
+    35  0006                     	;# 
+    36  0007                     	;# 
+    37  0008                     	;# 
+    38  0009                     	;# 
+    39  000A                     	;# 
+    40  000B                     	;# 
+    41  000C                     	;# 
+    42  0011                     	;# 
+    43  0012                     	;# 
+    44  0013                     	;# 
+    45  0015                     	;# 
+    46  0016                     	;# 
+    47  0016                     	;# 
+    48  0017                     	;# 
+    49  0018                     	;# 
+    50  0019                     	;# 
+    51  001A                     	;# 
+    52  001B                     	;# 
+    53  001C                     	;# 
+    54  008C                     	;# 
+    55  0091                     	;# 
+    56  0092                     	;# 
+    57  0093                     	;# 
+    58  0095                     	;# 
+    59  0096                     	;# 
+    60  0097                     	;# 
+    61  0099                     	;# 
+    62  009A                     	;# 
+    63  009B                     	;# 
+    64  009B                     	;# 
+    65  009C                     	;# 
+    66  009D                     	;# 
+    67  009E                     	;# 
+    68  009F                     	;# 
+    69  010C                     	;# 
+    70  0111                     	;# 
+    71  0112                     	;# 
+    72  0115                     	;# 
+    73  0116                     	;# 
+    74  0117                     	;# 
+    75  0118                     	;# 
+    76  0119                     	;# 
+    77  011D                     	;# 
+    78  018C                     	;# 
+    79  0191                     	;# 
+    80  0191                     	;# 
+    81  0192                     	;# 
+    82  0193                     	;# 
+    83  0193                     	;# 
+    84  0194                     	;# 
+    85  0195                     	;# 
+    86  0196                     	;# 
+    87  0197                     	;# 
+    88  020C                     	;# 
+    89  0391                     	;# 
+    90  0392                     	;# 
+    91  0393                     	;# 
+    92  0498                     	;# 
+    93  0498                     	;# 
+    94  0499                     	;# 
+    95  049A                     	;# 
+    96  049B                     	;# 
+    97  049B                     	;# 
+    98  049C                     	;# 
+    99  049E                     	;# 
+   100  049F                     	;# 
+   101  0611                     	;# 
+   102  0612                     	;# 
+   103  0613                     	;# 
+   104  0613                     	;# 
+   105  0614                     	;# 
+   106  0615                     	;# 
+   107  0616                     	;# 
+   108  0616                     	;# 
+   109  0617                     	;# 
+   110  0618                     	;# 
+   111  0619                     	;# 
+   112  0619                     	;# 
+   113  061A                     	;# 
+   114  061B                     	;# 
+   115  061C                     	;# 
+   116  061C                     	;# 
+   117  0691                     	;# 
+   118  0692                     	;# 
+   119  0693                     	;# 
+   120  0694                     	;# 
+   121  0695                     	;# 
+   122  0F0F                     	;# 
+   123  0F10                     	;# 
+   124  0F11                     	;# 
+   125  0F12                     	;# 
+   126  0F13                     	;# 
+   127  0F14                     	;# 
+   128  0F15                     	;# 
+   129  0F16                     	;# 
+   130  0F17                     	;# 
+   131  0F18                     	;# 
+   132  0F19                     	;# 
+   133  0F1A                     	;# 
+   134  0F1B                     	;# 
+   135  0F1C                     	;# 
+   136  0F1D                     	;# 
+   137  0F1E                     	;# 
+   138  0F1F                     	;# 
+   139  0FE3                     	;# 
+   140  0FE4                     	;# 
+   141  0FE5                     	;# 
+   142  0FE6                     	;# 
+   143  0FE7                     	;# 
+   144  0FE8                     	;# 
+   145  0FE9                     	;# 
+   146  0FEA                     	;# 
+   147  0FEB                     	;# 
+   148  0FED                     	;# 
+   149  0FEE                     	;# 
+   150  0FEF                     	;# 
+   151  0000                     	;# 
+   152  0001                     	;# 
+   153  0002                     	;# 
+   154  0003                     	;# 
+   155  0004                     	;# 
+   156  0005                     	;# 
+   157  0006                     	;# 
+   158  0007                     	;# 
+   159  0008                     	;# 
+   160  0009                     	;# 
+   161  000A                     	;# 
+   162  000B                     	;# 
+   163  000C                     	;# 
+   164  0011                     	;# 
+   165  0012                     	;# 
+   166  0013                     	;# 
+   167  0015                     	;# 
+   168  0016                     	;# 
+   169  0016                     	;# 
+   170  0017                     	;# 
+   171  0018                     	;# 
+   172  0019                     	;# 
+   173  001A                     	;# 
+   174  001B                     	;# 
+   175  001C                     	;# 
+   176  008C                     	;# 
+   177  0091                     	;# 
+   178  0092                     	;# 
+   179  0093                     	;# 
+   180  0095                     	;# 
+   181  0096                     	;# 
+   182  0097                     	;# 
+   183  0099                     	;# 
+   184  009A                     	;# 
+   185  009B                     	;# 
+   186  009B                     	;# 
+   187  009C                     	;# 
+   188  009D                     	;# 
+   189  009E                     	;# 
+   190  009F                     	;# 
+   191  010C                     	;# 
+   192  0111                     	;# 
+   193  0112                     	;# 
+   194  0115                     	;# 
+   195  0116                     	;# 
+   196  0117                     	;# 
+   197  0118                     	;# 
+   198  0119                     	;# 
+   199  011D                     	;# 
+   200  018C                     	;# 
+   201  0191                     	;# 
+   202  0191                     	;# 
+   203  0192                     	;# 
+   204  0193                     	;# 
+   205  0193                     	;# 
+   206  0194                     	;# 
+   207  0195                     	;# 
+   208  0196                     	;# 
+   209  0197                     	;# 
+   210  020C                     	;# 
+   211  0391                     	;# 
+   212  0392                     	;# 
+   213  0393                     	;# 
+   214  0498                     	;# 
+   215  0498                     	;# 
+   216  0499                     	;# 
+   217  049A                     	;# 
+   218  049B                     	;# 
+   219  049B                     	;# 
+   220  049C                     	;# 
+   221  049E                     	;# 
+   222  049F                     	;# 
+   223  0611                     	;# 
+   224  0612                     	;# 
+   225  0613                     	;# 
+   226  0613                     	;# 
+   227  0614                     	;# 
+   228  0615                     	;# 
+   229  0616                     	;# 
+   230  0616                     	;# 
+   231  0617                     	;# 
+   232  0618                     	;# 
+   233  0619                     	;# 
+   234  0619                     	;# 
+   235  061A                     	;# 
+   236  061B                     	;# 
+   237  061C                     	;# 
+   238  061C                     	;# 
+   239  0691                     	;# 
+   240  0692                     	;# 
+   241  0693                     	;# 
+   242  0694                     	;# 
+   243  0695                     	;# 
+   244  0F0F                     	;# 
+   245  0F10                     	;# 
+   246  0F11                     	;# 
+   247  0F12                     	;# 
+   248  0F13                     	;# 
+   249  0F14                     	;# 
+   250  0F15                     	;# 
+   251  0F16                     	;# 
+   252  0F17                     	;# 
+   253  0F18                     	;# 
+   254  0F19                     	;# 
+   255  0F1A                     	;# 
+   256  0F1B                     	;# 
+   257  0F1C                     	;# 
+   258  0F1D                     	;# 
+   259  0F1E                     	;# 
+   260  0F1F                     	;# 
+   261  0FE3                     	;# 
+   262  0FE4                     	;# 
+   263  0FE5                     	;# 
+   264  0FE6                     	;# 
+   265  0FE7                     	;# 
+   266  0FE8                     	;# 
+   267  0FE9                     	;# 
+   268  0FEA                     	;# 
+   269  0FEB                     	;# 
+   270  0FED                     	;# 
+   271  0FEE                     	;# 
+   272  0FEF                     	;# 
+   273  0000                     	;# 
+   274  0001                     	;# 
+   275  0002                     	;# 
+   276  0003                     	;# 
+   277  0004                     	;# 
+   278  0005                     	;# 
+   279  0006                     	;# 
+   280  0007                     	;# 
+   281  0008                     	;# 
+   282  0009                     	;# 
+   283  000A                     	;# 
+   284  000B                     	;# 
+   285  000C                     	;# 
+   286  0011                     	;# 
+   287  0012                     	;# 
+   288  0013                     	;# 
+   289  0015                     	;# 
+   290  0016                     	;# 
+   291  0016                     	;# 
+   292  0017                     	;# 
+   293  0018                     	;# 
+   294  0019                     	;# 
+   295  001A                     	;# 
+   296  001B                     	;# 
+   297  001C                     	;# 
+   298  008C                     	;# 
+   299  0091                     	;# 
+   300  0092                     	;# 
+   301  0093                     	;# 
+   302  0095                     	;# 
+   303  0096                     	;# 
+   304  0097                     	;# 
+   305  0099                     	;# 
+   306  009A                     	;# 
+   307  009B                     	;# 
+   308  009B                     	;# 
+   309  009C                     	;# 
+   310  009D                     	;# 
+   311  009E                     	;# 
+   312  009F                     	;# 
+   313  010C                     	;# 
+   314  0111                     	;# 
+   315  0112                     	;# 
+   316  0115                     	;# 
+   317  0116                     	;# 
+   318  0117                     	;# 
+   319  0118                     	;# 
+   320  0119                     	;# 
+   321  011D                     	;# 
+   322  018C                     	;# 
+   323  0191                     	;# 
+   324  0191                     	;# 
+   325  0192                     	;# 
+   326  0193                     	;# 
+   327  0193                     	;# 
+   328  0194                     	;# 
+   329  0195                     	;# 
+   330  0196                     	;# 
+   331  0197                     	;# 
+   332  020C                     	;# 
+   333  0391                     	;# 
+   334  0392                     	;# 
+   335  0393                     	;# 
+   336  0498                     	;# 
+   337  0498                     	;# 
+   338  0499                     	;# 
+   339  049A                     	;# 
+   340  049B                     	;# 
+   341  049B                     	;# 
+   342  049C                     	;# 
+   343  049E                     	;# 
+   344  049F                     	;# 
+   345  0611                     	;# 
+   346  0612                     	;# 
+   347  0613                     	;# 
+   348  0613                     	;# 
+   349  0614                     	;# 
+   350  0615                     	;# 
+   351  0616                     	;# 
+   352  0616                     	;# 
+   353  0617                     	;# 
+   354  0618                     	;# 
+   355  0619                     	;# 
+   356  0619                     	;# 
+   357  061A                     	;# 
+   358  061B                     	;# 
+   359  061C                     	;# 
+   360  061C                     	;# 
+   361  0691                     	;# 
+   362  0692                     	;# 
+   363  0693                     	;# 
+   364  0694                     	;# 
+   365  0695                     	;# 
+   366  0F0F                     	;# 
+   367  0F10                     	;# 
+   368  0F11                     	;# 
+   369  0F12                     	;# 
+   370  0F13                     	;# 
+   371  0F14                     	;# 
+   372  0F15                     	;# 
+   373  0F16                     	;# 
+   374  0F17                     	;# 
+   375  0F18                     	;# 
+   376  0F19                     	;# 
+   377  0F1A                     	;# 
+   378  0F1B                     	;# 
+   379  0F1C                     	;# 
+   380  0F1D                     	;# 
+   381  0F1E                     	;# 
+   382  0F1F                     	;# 
+   383  0FE3                     	;# 
+   384  0FE4                     	;# 
+   385  0FE5                     	;# 
+   386  0FE6                     	;# 
+   387  0FE7                     	;# 
+   388  0FE8                     	;# 
+   389  0FE9                     	;# 
+   390  0FEA                     	;# 
+   391  0FEB                     	;# 
+   392  0FED                     	;# 
+   393  0FEE                     	;# 
+   394  0FEF                     	;# 
+   395  0000                     	;# 
+   396  0001                     	;# 
+   397  0002                     	;# 
+   398  0003                     	;# 
+   399  0004                     	;# 
+   400  0005                     	;# 
+   401  0006                     	;# 
+   402  0007                     	;# 
+   403  0008                     	;# 
+   404  0009                     	;# 
+   405  000A                     	;# 
+   406  000B                     	;# 
+   407  000C                     	;# 
+   408  0011                     	;# 
+   409  0012                     	;# 
+   410  0013                     	;# 
+   411  0015                     	;# 
+   412  0016                     	;# 
+   413  0016                     	;# 
+   414  0017                     	;# 
+   415  0018                     	;# 
+   416  0019                     	;# 
+   417  001A                     	;# 
+   418  001B                     	;# 
+   419  001C                     	;# 
+   420  008C                     	;# 
+   421  0091                     	;# 
+   422  0092                     	;# 
+   423  0093                     	;# 
+   424  0095                     	;# 
+   425  0096                     	;# 
+   426  0097                     	;# 
+   427  0099                     	;# 
+   428  009A                     	;# 
+   429  009B                     	;# 
+   430  009B                     	;# 
+   431  009C                     	;# 
+   432  009D                     	;# 
+   433  009E                     	;# 
+   434  009F                     	;# 
+   435  010C                     	;# 
+   436  0111                     	;# 
+   437  0112                     	;# 
+   438  0115                     	;# 
+   439  0116                     	;# 
+   440  0117                     	;# 
+   441  0118                     	;# 
+   442  0119                     	;# 
+   443  011D                     	;# 
+   444  018C                     	;# 
+   445  0191                     	;# 
+   446  0191                     	;# 
+   447  0192                     	;# 
+   448  0193                     	;# 
+   449  0193                     	;# 
+   450  0194                     	;# 
+   451  0195                     	;# 
+   452  0196                     	;# 
+   453  0197                     	;# 
+   454  020C                     	;# 
+   455  0391                     	;# 
+   456  0392                     	;# 
+   457  0393                     	;# 
+   458  0498                     	;# 
+   459  0498                     	;# 
+   460  0499                     	;# 
+   461  049A                     	;# 
+   462  049B                     	;# 
+   463  049B                     	;# 
+   464  049C                     	;# 
+   465  049E                     	;# 
+   466  049F                     	;# 
+   467  0611                     	;# 
+   468  0612                     	;# 
+   469  0613                     	;# 
+   470  0613                     	;# 
+   471  0614                     	;# 
+   472  0615                     	;# 
+   473  0616                     	;# 
+   474  0616                     	;# 
+   475  0617                     	;# 
+   476  0618                     	;# 
+   477  0619                     	;# 
+   478  0619                     	;# 
+   479  061A                     	;# 
+   480  061B                     	;# 
+   481  061C                     	;# 
+   482  061C                     	;# 
+   483  0691                     	;# 
+   484  0692                     	;# 
+   485  0693                     	;# 
+   486  0694                     	;# 
+   487  0695                     	;# 
+   488  0F0F                     	;# 
+   489  0F10                     	;# 
+   490  0F11                     	;# 
+   491  0F12                     	;# 
+   492  0F13                     	;# 
+   493  0F14                     	;# 
+   494  0F15                     	;# 
+   495  0F16                     	;# 
+   496  0F17                     	;# 
+   497  0F18                     	;# 
+   498  0F19                     	;# 
+   499  0F1A                     	;# 
+   500  0F1B                     	;# 
+   501  0F1C                     	;# 
+   502  0F1D                     	;# 
+   503  0F1E                     	;# 
+   504  0F1F                     	;# 
+   505  0FE3                     	;# 
+   506  0FE4                     	;# 
+   507  0FE5                     	;# 
+   508  0FE6                     	;# 
+   509  0FE7                     	;# 
+   510  0FE8                     	;# 
+   511  0FE9                     	;# 
+   512  0FEA                     	;# 
+   513  0FEB                     	;# 
+   514  0FED                     	;# 
+   515  0FEE                     	;# 
+   516  0FEF                     	;# 
+   517                           
+   518                           	psect	nvBANK0
+   519  0041                     __pnvBANK0:	
+   520  0041                     _DimmingNumBackup:	
+   521  0041                     	ds	1
+   522  0042                     _DimmingNum:	
+   523  0042                     	ds	1
+   524  000B                     _INTCONbits	set	11
+   525  000C                     _PORTA	set	12
+   526  000C                     _PORTAbits	set	12
+   527  001B                     _PR2	set	27
+   528  001C                     _T2CON	set	28
+   529  0015                     _TMR0	set	21
+   530  0095                     _OPTION_REGbits	set	149
+   531  0099                     _OSCCON	set	153
+   532  008C                     _TRISA	set	140
+   533  0097                     _WDTCON	set	151
+   534  018C                     _ANSELA	set	396
+   535  0192                     _PMADRH	set	402
+   536  0191                     _PMADRL	set	401
+   537  0195                     _PMCON1bits	set	405
+   538  0196                     _PMCON2	set	406
+   539  0194                     _PMDATH	set	404
+   540  0193                     _PMDATL	set	403
+   541  020C                     _WPUA	set	524
+   542  0612                     _PWM1DCH	set	1554
+   543  0611                     _PWM1DCL	set	1553
+   544  0615                     _PWM2DCH	set	1557
+   545  0614                     _PWM2DCL	set	1556
+   546  0618                     _PWM3DCH	set	1560
+   547  0617                     _PWM3DCL	set	1559
+   548  061C                     _PWM4CON	set	1564
+   549  061B                     _PWM4DCH	set	1563
+   550  061A                     _PWM4DCL	set	1562
+   551                           
+   552                           ; #config settings
+   553  0000                     
+   554                           	psect	cinit
+   555  004B                     start_initialization:	
+   556  004B                     __initialization:	
+   557                           
+   558                           ; Clear objects allocated to BITCOMMON
+   559  004B  01F6               	clrf	(__pbitbssCOMMON/(0+8))& (0+127)
+   560                           
+   561                           ; Clear objects allocated to COMMON
+   562  004C  01F7               	clrf	__pbssCOMMON& (0+127)
+   563  004D  01F8               	clrf	(__pbssCOMMON+1)& (0+127)
+   564  004E  01F9               	clrf	(__pbssCOMMON+2)& (0+127)
+   565                           
+   566                           ; Clear objects allocated to BANK0
+   567  004F  3020               	movlw	low __pbssBANK0
+   568  0050  0084               	movwf	4
+   569  0051  3000               	movlw	high __pbssBANK0
+   570  0052  0085               	movwf	5
+   571  0053  3014               	movlw	20
+   572  0054  23EA               	fcall	clear_ram0
+   573  0055                     end_of_initialization:	
+   574                           ;End of C runtime variable initialization code
+   575                           
+   576  0055                     __end_of__initialization:	
+   577  0055  0020               	movlb	0
+   578  0056  2B34               	ljmp	_main	;jump to C main() function
+   579                           
+   580                           	psect	bitbssCOMMON
+   581  03B0                     __pbitbssCOMMON:	
+   582  03B0                     IrDeal@Night:	
+   583  03B0                     	ds	1
+   584  03B1                     _LeadFlg:	
+   585  03B1                     	ds	1
+   586  03B2                     _Ms10flag:	
+   587  03B2                     	ds	1
+   588  03B3                     _PlowFlg:	
+   589  03B3                     	ds	1
+   590  03B4                     _RcvFlg:	
+   591  03B4                     	ds	1
+   592                           
+   593                           	psect	bssCOMMON
+   594  0077                     __pbssCOMMON:	
+   595  0077                     _Pcount:	
+   596  0077                     	ds	2
+   597  0079                     _RecvN:	
+   598  0079                     	ds	1
+   599                           
+   600                           	psect	bssBANK0
+   601  0020                     __pbssBANK0:	
+   602  0020                     _Bz:	
+   603  0020                     	ds	7
+   604  0027                     _IrData:	
+   605  0027                     	ds	4
+   606  002B                     _TimingCnt:	
+   607  002B                     	ds	2
+   608  002D                     _TimingNum:	
+   609  002D                     	ds	2
+   610  002F                     GetIrAN@cnt1:	
+   611  002F                     	ds	1
+   612  0030                     GetIrAN@cnt2:	
+   613  0030                     	ds	1
+   614  0031                     _IrAn:	
+   615  0031                     	ds	1
+   616  0032                     _Ms10Cnt:	
+   617  0032                     	ds	1
+   618  0033                     _S1Cnt:	
+   619  0033                     	ds	1
+   620                           
+   621                           	psect	clrtext
+   622  03EA                     clear_ram0:	
+   623                           ;	Called with FSR0 containing the base address, and
+   624                           ;	WREG with the size to clear
+   625                           
+   626  03EA  0064               	clrwdt	;clear the watchdog before getting into this loop
+   627  03EB                     clrloop0:	
+   628  03EB  0180               	clrf	0	;clear RAM location pointed to by FSR
+   629  03EC  3101               	addfsr 0,1
+   630  03ED  0B89               	decfsz	9,f	;Have we reached the end of clearing yet?
+   631  03EE  2BEB               	goto	clrloop0	;have we reached the end yet?
+   632  03EF  3400               	retlw	0	;all done for this memory range, return
+   633                           
+   634                           	psect	cstackCOMMON
+   635  0070                     __pcstackCOMMON:	
+   636  0070                     ?_Initialize:	
+   637  0070                     ?_ReadDataFromFlash:	
+   638                           ; 0 bytes @ 0x0
+   639                           
+   640  0070                     ?_TimeBase:	
+   641                           ; 0 bytes @ 0x0
+   642                           
+   643  0070                     ?_IrDeal:	
+   644                           ; 0 bytes @ 0x0
+   645                           
+   646  0070                     ?_flash_memory_erase:	
+   647                           ; 0 bytes @ 0x0
+   648                           
+   649  0070                     ?_IrRcv:	
+   650                           ; 0 bytes @ 0x0
+   651                           
+   652  0070                     ??_IrRcv:	
+   653                           ; 0 bytes @ 0x0
+   654                           
+   655  0070                     ?_main:	
+   656                           ; 0 bytes @ 0x0
+   657                           
+   658  0070                     ?_SaveDataToFlash:	
+   659                           ; 0 bytes @ 0x0
+   660                           
+   661  0070                     ?_ISR:	
+   662                           ; 0 bytes @ 0x0
+   663                           
+   664  0070                     ?_flash_memory_read:	
+   665                           ; 0 bytes @ 0x0
+   666                           
+   667  0070                     ?_CheckIr:	
+   668                           ; 1 bytes @ 0x0
+   669                           
+   670  0070                     ?_GetIrAN:	
+   671                           ; 1 bytes @ 0x0
+   672                           
+   673                           
+   674                           ; 1 bytes @ 0x0
+   675  0070                     	ds	1
+   676  0071                     ??_ISR:	
+   677                           
+   678                           ; 0 bytes @ 0x1
+   679  0071                     	ds	3
+   680  0074                     ??_Initialize:	
+   681  0074                     ??_flash_memory_read:	
+   682                           ; 0 bytes @ 0x4
+   683                           
+   684  0074                     ??_flash_memory_erase:	
+   685                           ; 0 bytes @ 0x4
+   686                           
+   687  0074                     ?_flash_memory_write:	
+   688                           ; 0 bytes @ 0x4
+   689                           
+   690  0074                     ?_BzSet:	
+   691                           ; 0 bytes @ 0x4
+   692                           
+   693  0074                     ??_CheckIr:	
+   694                           ; 0 bytes @ 0x4
+   695                           
+   696  0074                     ??_GetIrAN:	
+   697                           ; 0 bytes @ 0x4
+   698                           
+   699  0074                     ??___wmul:	
+   700                           ; 0 bytes @ 0x4
+   701                           
+   702  0074                     flash_memory_write@data:	
+   703                           ; 0 bytes @ 0x4
+   704                           
+   705  0074                     BzSet@Long:	
+   706                           ; 1 bytes @ 0x4
+   707                           
+   708  0074                     ___wmul@product:	
+   709                           ; 2 bytes @ 0x4
+   710                           
+   711                           
+   712                           ; 2 bytes @ 0x4
+   713  0074                     	ds	1
+   714  0075                     GetIrAN@AN:	
+   715  0075                     flash_memory_write@datalen:	
+   716                           ; 1 bytes @ 0x5
+   717                           
+   718                           
+   719                           ; 1 bytes @ 0x5
+   720  0075                     	ds	1
+   721                           
+   722                           	psect	cstackBANK0
+   723  0034                     __pcstackBANK0:	
+   724  0034                     ??_flash_memory_write:	
+   725  0034                     ??_BzSet:	
+   726                           ; 0 bytes @ 0x0
+   727                           
+   728  0034                     ?___wmul:	
+   729                           ; 0 bytes @ 0x0
+   730                           
+   731  0034                     flash_memory_read@address:	
+   732                           ; 2 bytes @ 0x0
+   733                           
+   734  0034                     flash_memory_erase@Page:	
+   735                           ; 1 bytes @ 0x0
+   736                           
+   737  0034                     ___wmul@multiplier:	
+   738                           ; 1 bytes @ 0x0
+   739                           
+   740                           
+   741                           ; 2 bytes @ 0x0
+   742  0034                     	ds	1
+   743  0035                     BzSet@Times:	
+   744  0035                     flash_memory_read@AddrBuf:	
+   745                           ; 1 bytes @ 0x1
+   746                           
+   747  0035                     flash_memory_erase@AddrBuf:	
+   748                           ; 2 bytes @ 0x1
+   749                           
+   750                           
+   751                           ; 2 bytes @ 0x1
+   752  0035                     	ds	1
+   753  0036                     flash_memory_write@address:	
+   754  0036                     ___wmul@multiplicand:	
+   755                           ; 1 bytes @ 0x2
+   756                           
+   757                           
+   758                           ; 2 bytes @ 0x2
+   759  0036                     	ds	1
+   760  0037                     ??_ReadDataFromFlash:	
+   761  0037                     flash_memory_write@wdi:	
+   762                           ; 0 bytes @ 0x3
+   763                           
+   764                           
+   765                           ; 1 bytes @ 0x3
+   766  0037                     	ds	1
+   767  0038                     ?_WritePwmPercentage:	
+   768  0038                     ReadDataFromFlash@AddrTemp:	
+   769                           ; 0 bytes @ 0x4
+   770                           
+   771  0038                     WritePwmPercentage@Percentage:	
+   772                           ; 1 bytes @ 0x4
+   773                           
+   774  0038                     flash_memory_write@AddrBuf:	
+   775                           ; 2 bytes @ 0x4
+   776                           
+   777                           
+   778                           ; 2 bytes @ 0x4
+   779  0038                     	ds	2
+   780  003A                     ??_WritePwmPercentage:	
+   781  003A                     ??_SaveDataToFlash:	
+   782                           ; 0 bytes @ 0x6
+   783                           
+   784                           
+   785                           ; 0 bytes @ 0x6
+   786  003A                     	ds	1
+   787  003B                     SaveDataToFlash@AddrTemp:	
+   788                           
+   789                           ; 1 bytes @ 0x7
+   790  003B                     	ds	1
+   791  003C                     WritePwmPercentage@AN:	
+   792                           
+   793                           ; 1 bytes @ 0x8
+   794  003C                     	ds	1
+   795  003D                     ??_TimeBase:	
+   796  003D                     ??_IrDeal:	
+   797                           ; 0 bytes @ 0x9
+   798                           
+   799                           
+   800                           ; 0 bytes @ 0x9
+   801  003D                     	ds	2
+   802  003F                     ??_main:	
+   803                           
+   804                           ; 0 bytes @ 0xB
+   805  003F                     	ds	2
+   806                           
+   807                           	psect	maintext
+   808  0334                     __pmaintext:	
+   809 ;;
+   810 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   811 ;;
+   812 ;; *************** function _main *****************
+   813 ;; Defined at:
+   814 ;;		line 61 in file "sur/Main.c"
+   815 ;; Parameters:    Size  Location     Type
+   816 ;;		None
+   817 ;; Auto vars:     Size  Location     Type
+   818 ;;		None
+   819 ;; Return value:  Size  Location     Type
+   820 ;;		None               void
+   821 ;; Registers used:
+   822 ;;		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, status,2, status,0, btemp+1, pclath, cstack
+   823 ;; Tracked objects:
+   824 ;;		On entry : 17F/0
+   825 ;;		On exit  : 0/0
+   826 ;;		Unchanged: 0/0
+   827 ;; Data sizes:     COMMON   BANK0
+   828 ;;      Params:         0       0
+   829 ;;      Locals:         0       0
+   830 ;;      Temps:          0       2
+   831 ;;      Totals:         0       2
+   832 ;;Total ram usage:        2 bytes
+   833 ;; Hardware stack levels required when called:    5
+   834 ;; This function calls:
+   835 ;;		_CheckIr
+   836 ;;		_Initialize
+   837 ;;		_IrDeal
+   838 ;;		_ReadDataFromFlash
+   839 ;;		_TimeBase
+   840 ;;		_WritePwmPercentage
+   841 ;;		___wmul
+   842 ;; This function is called by:
+   843 ;;		Startup code after reset
+   844 ;; This function uses a non-reentrant model
+   845 ;;
+   846                           
+   847                           
+   848                           ;psect for function _main
+   849  0334                     _main:	
+   850                           
+   851                           ;Main.c: 63: Initialize();
+   852                           
+   853                           ;incstack = 0
+   854                           ; Regs used in _main: [allreg]
+   855  0334  2312               	fcall	_Initialize
+   856                           
+   857                           ;Main.c: 64: ReadDataFromFlash();
+   858  0335  23C6               	fcall	_ReadDataFromFlash
+   859                           
+   860                           ;Main.c: 65: PORTAbits.RA1=0;
+   861  0336  0020               	movlb	0	; select bank0
+   862  0337  108C               	bcf	12,1	;volatile
+   863                           
+   864                           ;Main.c: 66: WritePwmPercentage(4,DimmingNum*5);
+   865  0338  0842               	movf	_DimmingNum,w
+   866  0339  00BF               	movwf	??_main
+   867  033A  01C0               	clrf	??_main+1
+   868  033B  083F               	movf	??_main,w
+   869  033C  00B4               	movwf	___wmul@multiplier
+   870  033D  0840               	movf	??_main+1,w
+   871  033E  00B5               	movwf	___wmul@multiplier+1
+   872  033F  3005               	movlw	5
+   873  0340  00B6               	movwf	___wmul@multiplicand
+   874  0341  3000               	movlw	0
+   875  0342  00B7               	movwf	___wmul@multiplicand+1
+   876  0343  2391               	fcall	___wmul
+   877  0344  0020               	movlb	0	; select bank0
+   878  0345  0835               	movf	?___wmul+1,w
+   879  0346  01B9               	clrf	WritePwmPercentage@Percentage+1
+   880  0347  07B9               	addwf	WritePwmPercentage@Percentage+1,f
+   881  0348  0834               	movf	?___wmul,w
+   882  0349  01B8               	clrf	WritePwmPercentage@Percentage
+   883  034A  07B8               	addwf	WritePwmPercentage@Percentage,f
+   884  034B  3004               	movlw	4
+   885  034C  21B4               	fcall	_WritePwmPercentage
+   886  034D                     l111:	
+   887                           ;Main.c: 67: while (1)
+   888                           
+   889                           
+   890                           ;Main.c: 68: {
+   891                           ;Main.c: 70: TimeBase();
+   892  034D  22B5               	fcall	_TimeBase
+   893                           
+   894                           ;Main.c: 71: if(CheckIr())
+   895  034E  23AF               	fcall	_CheckIr
+   896  034F  3A00               	xorlw	0
+   897  0350  1903               	skipnz
+   898  0351  2B4D               	goto	l111
+   899                           
+   900                           ;Main.c: 72: {
+   901                           ;Main.c: 73: IrDeal();
+   902  0352  2057               	fcall	_IrDeal
+   903  0353  2B4D               	goto	l111
+   904  0354                     __end_of_main:	
+   905                           
+   906                           	psect	text1
+   907  02B5                     __ptext1:	
+   908 ;; *************** function _TimeBase *****************
+   909 ;; Defined at:
+   910 ;;		line 237 in file "sur/Main.c"
+   911 ;; Parameters:    Size  Location     Type
+   912 ;;		None
+   913 ;; Auto vars:     Size  Location     Type
+   914 ;;		None
+   915 ;; Return value:  Size  Location     Type
+   916 ;;		None               void
+   917 ;; Registers used:
+   918 ;;		wreg, status,2, status,0, pclath, cstack
+   919 ;; Tracked objects:
+   920 ;;		On entry : 0/0
+   921 ;;		On exit  : 0/0
+   922 ;;		Unchanged: 0/0
+   923 ;; Data sizes:     COMMON   BANK0
+   924 ;;      Params:         0       0
+   925 ;;      Locals:         0       0
+   926 ;;      Temps:          0       1
+   927 ;;      Totals:         0       1
+   928 ;;Total ram usage:        1 bytes
+   929 ;; Hardware stack levels used:    1
+   930 ;; Hardware stack levels required when called:    3
+   931 ;; This function calls:
+   932 ;;		_GetIrAN
+   933 ;;		_WritePwmPercentage
+   934 ;; This function is called by:
+   935 ;;		_main
+   936 ;; This function uses a non-reentrant model
+   937 ;;
+   938                           
+   939                           
+   940                           ;psect for function _TimeBase
+   941  02B5                     _TimeBase:	
+   942                           
+   943                           ;Main.c: 239: if(Ms10flag==1)
+   944                           
+   945                           ;incstack = 0
+   946                           ; Regs used in _TimeBase: [wreg+status,2+status,0+pclath+cstack]
+   947  02B5  1D76               	btfss	_Ms10flag/(0+8),_Ms10flag& (0+7)
+   948  02B6  0008               	return
+   949                           
+   950                           ;Main.c: 240: {
+   951                           ;Main.c: 241: Ms10flag=0;
+   952  02B7  1176               	bcf	_Ms10flag/(0+8),_Ms10flag& (0+7)
+   953                           
+   954                           ;Main.c: 242: S1Cnt+=1;
+   955  02B8  3001               	movlw	1
+   956  02B9  0020               	movlb	0	; select bank0
+   957  02BA  00BD               	movwf	??_TimeBase
+   958  02BB  083D               	movf	??_TimeBase,w
+   959  02BC  07B3               	addwf	_S1Cnt,f
+   960                           
+   961                           ;Main.c: 243: IrAn=GetIrAN();
+   962  02BD  2373               	fcall	_GetIrAN
+   963  02BE  0020               	movlb	0	; select bank0
+   964  02BF  00BD               	movwf	??_TimeBase
+   965  02C0  083D               	movf	??_TimeBase,w
+   966  02C1  00B1               	movwf	_IrAn
+   967                           
+   968                           ;Main.c: 244: if(S1Cnt>=100)
+   969  02C2  3064               	movlw	100
+   970  02C3  0233               	subwf	_S1Cnt,w
+   971  02C4  1C03               	skipc
+   972  02C5  0008               	return
+   973                           
+   974                           ;Main.c: 245: {
+   975                           ;Main.c: 246: S1Cnt=0;
+   976  02C6  01B3               	clrf	_S1Cnt
+   977                           
+   978                           ;Main.c: 247: if(TimingNum!=0)
+   979  02C7  082E               	movf	_TimingNum+1,w
+   980  02C8  042D               	iorwf	_TimingNum,w
+   981  02C9  1903               	skipnz
+   982  02CA  0008               	return
+   983                           
+   984                           ;Main.c: 248: {
+   985                           ;Main.c: 249: TimingCnt+=1;
+   986  02CB  3001               	movlw	1
+   987  02CC  07AB               	addwf	_TimingCnt,f
+   988  02CD  3000               	movlw	0
+   989  02CE  3DAC               	addwfc	_TimingCnt+1,f
+   990                           
+   991                           ;Main.c: 250: if(TimingCnt>=TimingNum)
+   992  02CF  082E               	movf	_TimingNum+1,w
+   993  02D0  022C               	subwf	_TimingCnt+1,w
+   994  02D1  1D03               	skipz
+   995  02D2  2AD5               	goto	u985
+   996  02D3  082D               	movf	_TimingNum,w
+   997  02D4  022B               	subwf	_TimingCnt,w
+   998  02D5                     u985:	
+   999  02D5  1C03               	skipc
+  1000  02D6  0008               	return
+  1001                           
+  1002                           ;Main.c: 251: {
+  1003                           ;Main.c: 252: TimingNum=0;
+  1004  02D7  01AD               	clrf	_TimingNum
+  1005  02D8  01AE               	clrf	_TimingNum+1
+  1006                           
+  1007                           ;Main.c: 253: TimingCnt=0;
+  1008  02D9  01AB               	clrf	_TimingCnt
+  1009  02DA  01AC               	clrf	_TimingCnt+1
+  1010                           
+  1011                           ;Main.c: 254: DimmingNum=0;
+  1012  02DB  01C2               	clrf	_DimmingNum
+  1013                           
+  1014                           ;Main.c: 255: PORTAbits.RA1=0;
+  1015  02DC  108C               	bcf	12,1	;volatile
+  1016                           
+  1017                           ;Main.c: 256: WritePwmPercentage(4,0);
+  1018  02DD  3000               	movlw	0
+  1019  02DE  00B8               	movwf	WritePwmPercentage@Percentage
+  1020  02DF  3000               	movlw	0
+  1021  02E0  00B9               	movwf	WritePwmPercentage@Percentage+1
+  1022  02E1  3004               	movlw	4
+  1023  02E2  21B4               	fcall	_WritePwmPercentage
+  1024  02E3  0008               	return
+  1025  02E4                     __end_of_TimeBase:	
+  1026                           
+  1027                           	psect	text2
+  1028  0373                     __ptext2:	
+  1029 ;; *************** function _GetIrAN *****************
+  1030 ;; Defined at:
+  1031 ;;		line 78 in file "sur/Main.c"
+  1032 ;; Parameters:    Size  Location     Type
+  1033 ;;		None
+  1034 ;; Auto vars:     Size  Location     Type
+  1035 ;;  AN              1    5[COMMON] unsigned char 
+  1036 ;; Return value:  Size  Location     Type
+  1037 ;;                  1    wreg      unsigned char 
+  1038 ;; Registers used:
+  1039 ;;		wreg, status,2, status,0
+  1040 ;; Tracked objects:
+  1041 ;;		On entry : 0/0
+  1042 ;;		On exit  : 0/0
+  1043 ;;		Unchanged: 0/0
+  1044 ;; Data sizes:     COMMON   BANK0
+  1045 ;;      Params:         0       0
+  1046 ;;      Locals:         1       0
+  1047 ;;      Temps:          1       0
+  1048 ;;      Totals:         2       0
+  1049 ;;Total ram usage:        2 bytes
+  1050 ;; Hardware stack levels used:    1
+  1051 ;; Hardware stack levels required when called:    2
+  1052 ;; This function calls:
+  1053 ;;		Nothing
+  1054 ;; This function is called by:
+  1055 ;;		_TimeBase
+  1056 ;; This function uses a non-reentrant model
+  1057 ;;
+  1058                           
+  1059                           
+  1060                           ;psect for function _GetIrAN
+  1061  0373                     _GetIrAN:	
+  1062                           
+  1063                           ;Main.c: 80: static unsigned char cnt1=0,cnt2=0;
+  1064                           ;Main.c: 81: unsigned char AN=0;
+  1065                           
+  1066                           ;incstack = 0
+  1067                           ; Regs used in _GetIrAN: [wreg+status,2+status,0]
+  1068  0373  01F5               	clrf	GetIrAN@AN
+  1069                           
+  1070                           ;Main.c: 82: if(PORTAbits.RA4==1)
+  1071  0374  0020               	movlb	0	; select bank0
+  1072  0375  1E0C               	btfss	12,4	;volatile
+  1073  0376  2B82               	goto	l1347
+  1074                           
+  1075                           ;Main.c: 83: {
+  1076                           ;Main.c: 84: cnt2=0;
+  1077  0377  01B0               	clrf	GetIrAN@cnt2
+  1078                           
+  1079                           ;Main.c: 85: if(cnt1++>10) AN=0x80;
+  1080  0378  3001               	movlw	1
+  1081  0379  00F4               	movwf	??_GetIrAN
+  1082  037A  0874               	movf	??_GetIrAN,w
+  1083  037B  07AF               	addwf	GetIrAN@cnt1,f
+  1084  037C  300C               	movlw	12
+  1085  037D  022F               	subwf	GetIrAN@cnt1,w
+  1086  037E  1C03               	skipc
+  1087  037F  2B8F               	goto	l124
+  1088  0380  3080               	movlw	128
+  1089  0381  2B8C               	goto	L1
+  1090  0382                     l1347:	
+  1091                           ;Main.c: 86: }
+  1092                           
+  1093                           
+  1094                           ;Main.c: 87: else
+  1095                           ;Main.c: 88: {
+  1096                           ;Main.c: 89: cnt1=0;
+  1097  0382  01AF               	clrf	GetIrAN@cnt1
+  1098                           
+  1099                           ;Main.c: 90: if(cnt2++>10) AN=0xF0;
+  1100  0383  3001               	movlw	1
+  1101  0384  00F4               	movwf	??_GetIrAN
+  1102  0385  0874               	movf	??_GetIrAN,w
+  1103  0386  07B0               	addwf	GetIrAN@cnt2,f
+  1104  0387  300C               	movlw	12
+  1105  0388  0230               	subwf	GetIrAN@cnt2,w
+  1106  0389  1C03               	skipc
+  1107  038A  2B8F               	goto	l124
+  1108  038B  30F0               	movlw	240
+  1109  038C                     L1:	
+  1110  038C  00F4               	movwf	??_GetIrAN
+  1111  038D  0874               	movf	??_GetIrAN,w
+  1112  038E  00F5               	movwf	GetIrAN@AN
+  1113  038F                     l124:	
+  1114                           
+  1115                           ;Main.c: 91: }
+  1116                           ;Main.c: 92: return AN;
+  1117  038F  0875               	movf	GetIrAN@AN,w
+  1118  0390  0008               	return
+  1119  0391                     __end_of_GetIrAN:	
+  1120                           
+  1121                           	psect	text3
+  1122  0057                     __ptext3:	
+  1123 ;; *************** function _IrDeal *****************
+  1124 ;; Defined at:
+  1125 ;;		line 126 in file "sur/Main.c"
+  1126 ;; Parameters:    Size  Location     Type
+  1127 ;;		None
+  1128 ;; Auto vars:     Size  Location     Type
+  1129 ;;		None
+  1130 ;; Return value:  Size  Location     Type
+  1131 ;;		None               void
+  1132 ;; Registers used:
+  1133 ;;		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  1134 ;; Tracked objects:
+  1135 ;;		On entry : 0/0
+  1136 ;;		On exit  : 0/0
+  1137 ;;		Unchanged: 0/0
+  1138 ;; Data sizes:     COMMON   BANK0
+  1139 ;;      Params:         0       0
+  1140 ;;      Locals:         0       0
+  1141 ;;      Temps:          0       2
+  1142 ;;      Totals:         0       2
+  1143 ;;Total ram usage:        2 bytes
+  1144 ;; Hardware stack levels used:    1
+  1145 ;; Hardware stack levels required when called:    4
+  1146 ;; This function calls:
+  1147 ;;		_BzSet
+  1148 ;;		_ReadDataFromFlash
+  1149 ;;		_SaveDataToFlash
+  1150 ;;		_WritePwmPercentage
+  1151 ;;		___wmul
+  1152 ;; This function is called by:
+  1153 ;;		_main
+  1154 ;; This function uses a non-reentrant model
+  1155 ;;
+  1156                           
+  1157                           
+  1158                           ;psect for function _IrDeal
+  1159  0057                     _IrDeal:	
+  1160                           
+  1161                           ;Main.c: 129: static bit Night=0;
+  1162                           ;Main.c: 131: if(IrAn!=IrData.Buf4)
+  1163                           
+  1164                           ;incstack = 0
+  1165                           ; Regs used in _IrDeal: [wreg-fsr1h+status,2+status,0+pclath+cstack]
+  1166  0057  0020               	movlb	0	; select bank0
+  1167  0058  082A               	movf	_IrData+3,w	;volatile
+  1168  0059  0631               	xorwf	_IrAn,w
+  1169  005A  1D03               	btfss	3,2
+  1170  005B  0008               	return
+  1171  005C  28F8               	goto	l1609
+  1172  005D                     l1531:	
+  1173                           ;Main.c: 135: {
+  1174                           ;Main.c: 136: case 0x30:
+  1175                           
+  1176                           ;Main.c: 134: switch(IrData.Buf2)
+  1177                           
+  1178                           ;Main.c: 132: return;
+  1179                           
+  1180                           
+  1181                           ;Main.c: 137: {
+  1182                           ;Main.c: 138: if(TimingNum==0){TimingNum=1800; BzSet(1,1000);}
+  1183  005D  082E               	movf	_TimingNum+1,w
+  1184  005E  042D               	iorwf	_TimingNum,w
+  1185  005F  1D03               	skipz
+  1186  0060  286C               	goto	l1537
+  1187  0061  3008               	movlw	8
+  1188  0062  00AD               	movwf	_TimingNum
+  1189  0063  3007               	movlw	7
+  1190  0064  00AE               	movwf	_TimingNum+1
+  1191  0065  30E8               	movlw	232
+  1192  0066  00F4               	movwf	BzSet@Long
+  1193  0067  3003               	movlw	3
+  1194  0068  00F5               	movwf	BzSet@Long+1
+  1195  0069  3001               	movlw	1
+  1196  006A  23D9               	fcall	_BzSet
+  1197  006B  2913               	goto	l148
+  1198  006C                     l1537:	
+  1199                           
+  1200                           ;Main.c: 139: else
+  1201                           ;Main.c: 140: {
+  1202                           ;Main.c: 141: TimingNum=0;
+  1203  006C  0020               	movlb	0	; select bank0
+  1204  006D  01AD               	clrf	_TimingNum
+  1205  006E  01AE               	clrf	_TimingNum+1
+  1206                           
+  1207                           ;Main.c: 142: TimingCnt=0;
+  1208  006F  01AB               	clrf	_TimingCnt
+  1209  0070  01AC               	clrf	_TimingCnt+1
+  1210                           
+  1211                           ;Main.c: 143: BzSet(2,1000);
+  1212  0071  30E8               	movlw	232
+  1213  0072  00F4               	movwf	BzSet@Long
+  1214  0073  3003               	movlw	3
+  1215  0074  00F5               	movwf	BzSet@Long+1
+  1216  0075  3002               	movlw	2
+  1217  0076  23D9               	fcall	_BzSet
+  1218                           
+  1219                           ;Main.c: 144: }
+  1220                           ;Main.c: 145: break;
+  1221  0077  2913               	goto	l148
+  1222  0078                     l1541:	
+  1223                           ;Main.c: 146: }
+  1224                           ;Main.c: 147: case 0xD0:
+  1225                           
+  1226                           
+  1227                           ;Main.c: 148: {
+  1228                           ;Main.c: 149: if(TimingNum==0){TimingNum=3600; BzSet(1,1000);}
+  1229  0078  0020               	movlb	0	; select bank0
+  1230  0079  082E               	movf	_TimingNum+1,w
+  1231  007A  042D               	iorwf	_TimingNum,w
+  1232  007B  1D03               	skipz
+  1233  007C  2888               	goto	l1547
+  1234  007D  3010               	movlw	16
+  1235  007E  00AD               	movwf	_TimingNum
+  1236  007F  300E               	movlw	14
+  1237  0080  00AE               	movwf	_TimingNum+1
+  1238  0081  30E8               	movlw	232
+  1239  0082  00F4               	movwf	BzSet@Long
+  1240  0083  3003               	movlw	3
+  1241  0084  00F5               	movwf	BzSet@Long+1
+  1242  0085  3001               	movlw	1
+  1243  0086  23D9               	fcall	_BzSet
+  1244  0087  2913               	goto	l148
+  1245  0088                     l1547:	
+  1246                           
+  1247                           ;Main.c: 150: else
+  1248                           ;Main.c: 151: {
+  1249                           ;Main.c: 152: TimingNum=0;
+  1250  0088  0020               	movlb	0	; select bank0
+  1251  0089  01AD               	clrf	_TimingNum
+  1252  008A  01AE               	clrf	_TimingNum+1
+  1253                           
+  1254                           ;Main.c: 153: TimingCnt=0;
+  1255  008B  01AB               	clrf	_TimingCnt
+  1256  008C  01AC               	clrf	_TimingCnt+1
+  1257                           
+  1258                           ;Main.c: 154: BzSet(2,1000);
+  1259  008D  30E8               	movlw	232
+  1260  008E  00F4               	movwf	BzSet@Long
+  1261  008F  3003               	movlw	3
+  1262  0090  00F5               	movwf	BzSet@Long+1
+  1263  0091  3002               	movlw	2
+  1264  0092  23D9               	fcall	_BzSet
+  1265                           
+  1266                           ;Main.c: 155: }
+  1267                           ;Main.c: 156: break;
+  1268  0093  2913               	goto	l148
+  1269  0094                     l1551:	
+  1270                           ;Main.c: 157: }
+  1271                           ;Main.c: 158: case 0x10:
+  1272                           
+  1273                           
+  1274                           ;Main.c: 159: {
+  1275                           ;Main.c: 161: DimmingNum=56;
+  1276  0094  3038               	movlw	56
+  1277  0095  0020               	movlb	0	; select bank0
+  1278  0096  00BD               	movwf	??_IrDeal
+  1279  0097  083D               	movf	??_IrDeal,w
+  1280  0098  00C2               	movwf	_DimmingNum
+  1281                           
+  1282                           ;Main.c: 162: Night=0;
+  1283  0099  1076               	bcf	IrDeal@Night/(0+8),IrDeal@Night& (0+7)
+  1284                           
+  1285                           ;Main.c: 163: SaveDataToFlash();
+  1286  009A  2282               	fcall	_SaveDataToFlash
+  1287                           
+  1288                           ;Main.c: 164: BzSet(1,1000);
+  1289  009B  30E8               	movlw	232
+  1290  009C  00F4               	movwf	BzSet@Long
+  1291  009D  3003               	movlw	3
+  1292  009E  00F5               	movwf	BzSet@Long+1
+  1293  009F  3001               	movlw	1
+  1294  00A0  23D9               	fcall	_BzSet
+  1295                           
+  1296                           ;Main.c: 165: break;
+  1297  00A1  2913               	goto	l148
+  1298  00A2                     l1559:	
+  1299                           ;Main.c: 166: }
+  1300                           ;Main.c: 167: case 0x90:
+  1301                           
+  1302                           
+  1303                           ;Main.c: 168: {
+  1304                           ;Main.c: 170: DimmingNum=43;
+  1305  00A2  302B               	movlw	43
+  1306  00A3  0020               	movlb	0	; select bank0
+  1307  00A4  00BD               	movwf	??_IrDeal
+  1308  00A5  083D               	movf	??_IrDeal,w
+  1309  00A6  00C2               	movwf	_DimmingNum
+  1310                           
+  1311                           ;Main.c: 171: Night=0;
+  1312  00A7  1076               	bcf	IrDeal@Night/(0+8),IrDeal@Night& (0+7)
+  1313                           
+  1314                           ;Main.c: 172: SaveDataToFlash();
+  1315  00A8  2282               	fcall	_SaveDataToFlash
+  1316                           
+  1317                           ;Main.c: 173: BzSet(1,1000);
+  1318  00A9  30E8               	movlw	232
+  1319  00AA  00F4               	movwf	BzSet@Long
+  1320  00AB  3003               	movlw	3
+  1321  00AC  00F5               	movwf	BzSet@Long+1
+  1322  00AD  3001               	movlw	1
+  1323  00AE  23D9               	fcall	_BzSet
+  1324                           
+  1325                           ;Main.c: 174: break;
+  1326  00AF  2913               	goto	l148
+  1327  00B0                     l1567:	
+  1328                           ;Main.c: 175: }
+  1329                           ;Main.c: 176: case 0x50:
+  1330                           
+  1331                           
+  1332                           ;Main.c: 177: {
+  1333                           ;Main.c: 179: DimmingNum=35;
+  1334  00B0  3023               	movlw	35
+  1335  00B1  0020               	movlb	0	; select bank0
+  1336  00B2  00BD               	movwf	??_IrDeal
+  1337  00B3  083D               	movf	??_IrDeal,w
+  1338  00B4  00C2               	movwf	_DimmingNum
+  1339                           
+  1340                           ;Main.c: 180: Night=0;
+  1341  00B5  1076               	bcf	IrDeal@Night/(0+8),IrDeal@Night& (0+7)
+  1342                           
+  1343                           ;Main.c: 181: SaveDataToFlash();
+  1344  00B6  2282               	fcall	_SaveDataToFlash
+  1345                           
+  1346                           ;Main.c: 182: BzSet(1,1000);
+  1347  00B7  30E8               	movlw	232
+  1348  00B8  00F4               	movwf	BzSet@Long
+  1349  00B9  3003               	movlw	3
+  1350  00BA  00F5               	movwf	BzSet@Long+1
+  1351  00BB  3001               	movlw	1
+  1352  00BC  23D9               	fcall	_BzSet
+  1353                           
+  1354                           ;Main.c: 183: break;
+  1355  00BD  2913               	goto	l148
+  1356  00BE                     l1575:	
+  1357                           ;Main.c: 184: }
+  1358                           ;Main.c: 185: case 0x20:
+  1359                           
+  1360                           
+  1361                           ;Main.c: 186: {
+  1362                           ;Main.c: 188: DimmingNum=28;
+  1363  00BE  301C               	movlw	28
+  1364  00BF  0020               	movlb	0	; select bank0
+  1365  00C0  00BD               	movwf	??_IrDeal
+  1366  00C1  083D               	movf	??_IrDeal,w
+  1367  00C2  00C2               	movwf	_DimmingNum
+  1368                           
+  1369                           ;Main.c: 189: Night=0;
+  1370  00C3  1076               	bcf	IrDeal@Night/(0+8),IrDeal@Night& (0+7)
+  1371                           
+  1372                           ;Main.c: 190: SaveDataToFlash();
+  1373  00C4  2282               	fcall	_SaveDataToFlash
+  1374                           
+  1375                           ;Main.c: 191: BzSet(1,1000);
+  1376  00C5  30E8               	movlw	232
+  1377  00C6  00F4               	movwf	BzSet@Long
+  1378  00C7  3003               	movlw	3
+  1379  00C8  00F5               	movwf	BzSet@Long+1
+  1380  00C9  3001               	movlw	1
+  1381  00CA  23D9               	fcall	_BzSet
+  1382                           
+  1383                           ;Main.c: 192: break;
+  1384  00CB  2913               	goto	l148
+  1385  00CC                     l156:	
+  1386                           ;Main.c: 193: }
+  1387                           ;Main.c: 194: case 0x40:
+  1388                           
+  1389                           
+  1390                           ;Main.c: 195: {
+  1391                           ;Main.c: 197: if(Night!=1)
+  1392  00CC  1876               	btfsc	IrDeal@Night/(0+8),IrDeal@Night& (0+7)
+  1393  00CD  28D7               	goto	l1589
+  1394                           
+  1395                           ;Main.c: 198: {
+  1396                           ;Main.c: 199: DimmingNum=0;
+  1397  00CE  01C2               	clrf	_DimmingNum
+  1398                           
+  1399                           ;Main.c: 200: Night=1;
+  1400  00CF  1476               	bsf	IrDeal@Night/(0+8),IrDeal@Night& (0+7)
+  1401                           
+  1402                           ;Main.c: 201: BzSet(1,1000);
+  1403  00D0  30E8               	movlw	232
+  1404  00D1  00F4               	movwf	BzSet@Long
+  1405  00D2  3003               	movlw	3
+  1406  00D3  00F5               	movwf	BzSet@Long+1
+  1407  00D4  3001               	movlw	1
+  1408  00D5  23D9               	fcall	_BzSet
+  1409                           
+  1410                           ;Main.c: 202: }
+  1411  00D6  2913               	goto	l148
+  1412  00D7                     l1589:	
+  1413                           
+  1414                           ;Main.c: 203: else
+  1415                           ;Main.c: 204: {
+  1416                           ;Main.c: 205: DimmingNum=0;
+  1417  00D7  0020               	movlb	0	; select bank0
+  1418  00D8  01C2               	clrf	_DimmingNum
+  1419                           
+  1420                           ;Main.c: 206: Night=0;
+  1421  00D9  1076               	bcf	IrDeal@Night/(0+8),IrDeal@Night& (0+7)
+  1422                           
+  1423                           ;Main.c: 207: BzSet(1,1000);
+  1424  00DA  30E8               	movlw	232
+  1425  00DB  00F4               	movwf	BzSet@Long
+  1426  00DC  3003               	movlw	3
+  1427  00DD  00F5               	movwf	BzSet@Long+1
+  1428  00DE  3001               	movlw	1
+  1429  00DF  23D9               	fcall	_BzSet
+  1430                           
+  1431                           ;Main.c: 208: }
+  1432                           ;Main.c: 209: break;
+  1433  00E0  2913               	goto	l148
+  1434  00E1                     l1595:	
+  1435                           ;Main.c: 210: }
+  1436                           ;Main.c: 211: case 0x80:
+  1437                           
+  1438                           
+  1439                           ;Main.c: 212: {
+  1440                           ;Main.c: 214: if(DimmingNum==0)
+  1441  00E1  0020               	movlb	0	; select bank0
+  1442  00E2  08C2               	movf	_DimmingNum,f
+  1443  00E3  1D03               	skipz
+  1444  00E4  28EE               	goto	l1601
+  1445                           
+  1446                           ;Main.c: 215: {
+  1447                           ;Main.c: 217: Night=0;
+  1448  00E5  1076               	bcf	IrDeal@Night/(0+8),IrDeal@Night& (0+7)
+  1449                           
+  1450                           ;Main.c: 218: ReadDataFromFlash();
+  1451  00E6  23C6               	fcall	_ReadDataFromFlash
+  1452                           
+  1453                           ;Main.c: 219: BzSet(1,1000);
+  1454  00E7  30E8               	movlw	232
+  1455  00E8  00F4               	movwf	BzSet@Long
+  1456  00E9  3003               	movlw	3
+  1457  00EA  00F5               	movwf	BzSet@Long+1
+  1458  00EB  3001               	movlw	1
+  1459  00EC  23D9               	fcall	_BzSet
+  1460                           
+  1461                           ;Main.c: 220: }
+  1462  00ED  2913               	goto	l148
+  1463  00EE                     l1601:	
+  1464                           
+  1465                           ;Main.c: 221: else
+  1466                           ;Main.c: 222: {
+  1467                           ;Main.c: 223: DimmingNum=0;
+  1468  00EE  0020               	movlb	0	; select bank0
+  1469  00EF  01C2               	clrf	_DimmingNum
+  1470                           
+  1471                           ;Main.c: 224: Night=0;
+  1472  00F0  1076               	bcf	IrDeal@Night/(0+8),IrDeal@Night& (0+7)
+  1473                           
+  1474                           ;Main.c: 225: BzSet(1,1000);
+  1475  00F1  30E8               	movlw	232
+  1476  00F2  00F4               	movwf	BzSet@Long
+  1477  00F3  3003               	movlw	3
+  1478  00F4  00F5               	movwf	BzSet@Long+1
+  1479  00F5  3001               	movlw	1
+  1480  00F6  23D9               	fcall	_BzSet
+  1481                           
+  1482                           ;Main.c: 226: }
+  1483                           ;Main.c: 227: break;
+  1484  00F7  2913               	goto	l148
+  1485  00F8                     l1609:	
+  1486                           ;Main.c: 230: }
+  1487                           
+  1488                           ;Main.c: 228: }
+  1489                           ;Main.c: 229: default: return;
+  1490                           
+  1491  00F8  0020               	movlb	0	; select bank0
+  1492  00F9  0828               	movf	_IrData+1,w	;volatile
+  1493                           
+  1494                           ; Switch size 1, requested type "space"
+  1495                           ; Number of cases is 8, Range of values is 16 to 208
+  1496                           ; switch strategies available:
+  1497                           ; Name         Instructions Cycles
+  1498                           ; simple_byte           25    13 (average)
+  1499                           ; jumptable            263     9 (fixed)
+  1500                           ;	Chosen strategy is simple_byte
+  1501  00FA  3A10               	xorlw	16	; case 16
+  1502  00FB  1903               	skipnz
+  1503  00FC  2894               	goto	l1551
+  1504  00FD  3A30               	xorlw	48	; case 32
+  1505  00FE  1903               	skipnz
+  1506  00FF  28BE               	goto	l1575
+  1507  0100  3A10               	xorlw	16	; case 48
+  1508  0101  1903               	skipnz
+  1509  0102  285D               	goto	l1531
+  1510  0103  3A70               	xorlw	112	; case 64
+  1511  0104  1903               	skipnz
+  1512  0105  28CC               	goto	l156
+  1513  0106  3A10               	xorlw	16	; case 80
+  1514  0107  1903               	skipnz
+  1515  0108  28B0               	goto	l1567
+  1516  0109  3AD0               	xorlw	208	; case 128
+  1517  010A  1903               	skipnz
+  1518  010B  28E1               	goto	l1595
+  1519  010C  3A10               	xorlw	16	; case 144
+  1520  010D  1903               	skipnz
+  1521  010E  28A2               	goto	l1559
+  1522  010F  3A40               	xorlw	64	; case 208
+  1523  0110  1903               	skipnz
+  1524  0111  2878               	goto	l1541
+  1525  0112  292F               	goto	l143
+  1526  0113                     l148:	
+  1527                           
+  1528                           ;Main.c: 231: PORTAbits.RA1=Night;
+  1529  0113  1C76               	btfss	IrDeal@Night/(0+8),IrDeal@Night& (0+7)
+  1530  0114  2918               	goto	u1290
+  1531  0115  0020               	movlb	0	; select bank0
+  1532  0116  148C               	bsf	12,1	;volatile
+  1533  0117  291A               	goto	l1611
+  1534  0118                     u1290:	
+  1535  0118  0020               	movlb	0	; select bank0
+  1536  0119  108C               	bcf	12,1	;volatile
+  1537  011A                     l1611:	
+  1538                           
+  1539                           ;Main.c: 232: WritePwmPercentage(4,DimmingNum*5);
+  1540  011A  0842               	movf	_DimmingNum,w
+  1541  011B  00BD               	movwf	??_IrDeal
+  1542  011C  01BE               	clrf	??_IrDeal+1
+  1543  011D  083D               	movf	??_IrDeal,w
+  1544  011E  00B4               	movwf	___wmul@multiplier
+  1545  011F  083E               	movf	??_IrDeal+1,w
+  1546  0120  00B5               	movwf	___wmul@multiplier+1
+  1547  0121  3005               	movlw	5
+  1548  0122  00B6               	movwf	___wmul@multiplicand
+  1549  0123  3000               	movlw	0
+  1550  0124  00B7               	movwf	___wmul@multiplicand+1
+  1551  0125  2391               	fcall	___wmul
+  1552  0126  0020               	movlb	0	; select bank0
+  1553  0127  0835               	movf	?___wmul+1,w
+  1554  0128  01B9               	clrf	WritePwmPercentage@Percentage+1
+  1555  0129  07B9               	addwf	WritePwmPercentage@Percentage+1,f
+  1556  012A  0834               	movf	?___wmul,w
+  1557  012B  01B8               	clrf	WritePwmPercentage@Percentage
+  1558  012C  07B8               	addwf	WritePwmPercentage@Percentage,f
+  1559  012D  3004               	movlw	4
+  1560  012E  21B4               	fcall	_WritePwmPercentage
+  1561  012F                     l143:	
+  1562  012F  0008               	return
+  1563  0130                     __end_of_IrDeal:	
+  1564                           
+  1565                           	psect	text4
+  1566  0391                     __ptext4:	
+  1567 ;; *************** function ___wmul *****************
+  1568 ;; Defined at:
+  1569 ;;		line 4 in file "C:\Program Files\Microchip\xc8\v1.30\sources\common\wmul.c"
+  1570 ;; Parameters:    Size  Location     Type
+  1571 ;;  multiplier      2    0[BANK0 ] unsigned int 
+  1572 ;;  multiplicand    2    2[BANK0 ] unsigned int 
+  1573 ;; Auto vars:     Size  Location     Type
+  1574 ;;  product         2    4[COMMON] unsigned int 
+  1575 ;; Return value:  Size  Location     Type
+  1576 ;;                  2    0[BANK0 ] unsigned int 
+  1577 ;; Registers used:
+  1578 ;;		wreg, status,2, status,0
+  1579 ;; Tracked objects:
+  1580 ;;		On entry : 0/0
+  1581 ;;		On exit  : 0/0
+  1582 ;;		Unchanged: 0/0
+  1583 ;; Data sizes:     COMMON   BANK0
+  1584 ;;      Params:         0       4
+  1585 ;;      Locals:         2       0
+  1586 ;;      Temps:          0       0
+  1587 ;;      Totals:         2       4
+  1588 ;;Total ram usage:        6 bytes
+  1589 ;; Hardware stack levels used:    1
+  1590 ;; Hardware stack levels required when called:    2
+  1591 ;; This function calls:
+  1592 ;;		Nothing
+  1593 ;; This function is called by:
+  1594 ;;		_main
+  1595 ;;		_IrDeal
+  1596 ;; This function uses a non-reentrant model
+  1597 ;;
+  1598                           
+  1599                           
+  1600                           ;psect for function ___wmul
+  1601  0391                     ___wmul:	
+  1602                           
+  1603                           ;incstack = 0
+  1604                           ; Regs used in ___wmul: [wreg+status,2+status,0]
+  1605  0391  01F4               	clrf	___wmul@product
+  1606  0392  01F5               	clrf	___wmul@product+1
+  1607  0393                     l1725:	
+  1608  0393  0020               	movlb	0	; select bank0
+  1609  0394  1C34               	btfss	___wmul@multiplier,0
+  1610  0395  2B9A               	goto	l601
+  1611  0396  0836               	movf	___wmul@multiplicand,w
+  1612  0397  07F4               	addwf	___wmul@product,f
+  1613  0398  0837               	movf	___wmul@multiplicand+1,w
+  1614  0399  3DF5               	addwfc	___wmul@product+1,f
+  1615  039A                     l601:	
+  1616  039A  3001               	movlw	1
+  1617  039B                     u1365:	
+  1618  039B  35B6               	lslf	___wmul@multiplicand,f
+  1619  039C  0DB7               	rlf	___wmul@multiplicand+1,f
+  1620  039D  0B89               	decfsz	9,f
+  1621  039E  2B9B               	goto	u1365
+  1622  039F  3001               	movlw	1
+  1623  03A0                     u1375:	
+  1624  03A0  36B5               	lsrf	___wmul@multiplier+1,f
+  1625  03A1  0CB4               	rrf	___wmul@multiplier,f
+  1626  03A2  0B89               	decfsz	9,f
+  1627  03A3  2BA0               	goto	u1375
+  1628  03A4  0835               	movf	___wmul@multiplier+1,w
+  1629  03A5  0434               	iorwf	___wmul@multiplier,w
+  1630  03A6  1D03               	skipz
+  1631  03A7  2B93               	goto	l1725
+  1632  03A8  0875               	movf	___wmul@product+1,w
+  1633  03A9  01B5               	clrf	?___wmul+1
+  1634  03AA  07B5               	addwf	?___wmul+1,f
+  1635  03AB  0874               	movf	___wmul@product,w
+  1636  03AC  01B4               	clrf	?___wmul
+  1637  03AD  07B4               	addwf	?___wmul,f
+  1638  03AE  0008               	return
+  1639  03AF                     __end_of___wmul:	
+  1640                           
+  1641                           	psect	text5
+  1642  01B4                     __ptext5:	
+  1643 ;; *************** function _WritePwmPercentage *****************
+  1644 ;; Defined at:
+  1645 ;;		line 4 in file "sur/Pwm.c"
+  1646 ;; Parameters:    Size  Location     Type
+  1647 ;;  AN              1    wreg     unsigned char 
+  1648 ;;  Percentage      2    4[BANK0 ] unsigned int 
+  1649 ;; Auto vars:     Size  Location     Type
+  1650 ;;  AN              1    8[BANK0 ] unsigned char 
+  1651 ;; Return value:  Size  Location     Type
+  1652 ;;		None               void
+  1653 ;; Registers used:
+  1654 ;;		wreg, status,2, status,0
+  1655 ;; Tracked objects:
+  1656 ;;		On entry : 0/0
+  1657 ;;		On exit  : 0/0
+  1658 ;;		Unchanged: 0/0
+  1659 ;; Data sizes:     COMMON   BANK0
+  1660 ;;      Params:         0       2
+  1661 ;;      Locals:         0       1
+  1662 ;;      Temps:          0       2
+  1663 ;;      Totals:         0       5
+  1664 ;;Total ram usage:        5 bytes
+  1665 ;; Hardware stack levels used:    1
+  1666 ;; Hardware stack levels required when called:    2
+  1667 ;; This function calls:
+  1668 ;;		Nothing
+  1669 ;; This function is called by:
+  1670 ;;		_main
+  1671 ;;		_IrDeal
+  1672 ;;		_TimeBase
+  1673 ;; This function uses a non-reentrant model
+  1674 ;;
+  1675                           
+  1676                           
+  1677                           ;psect for function _WritePwmPercentage
+  1678  01B4                     _WritePwmPercentage:	
+  1679                           
+  1680                           ;incstack = 0
+  1681                           ; Regs used in _WritePwmPercentage: [wreg+status,2+status,0]
+  1682                           ;WritePwmPercentage@AN stored from wreg
+  1683  01B4  0020               	movlb	0	; select bank0
+  1684  01B5  00BC               	movwf	WritePwmPercentage@AN
+  1685                           
+  1686                           ;Pwm.c: 6: if(Percentage>276)
+  1687  01B6  3001               	movlw	1
+  1688  01B7  0239               	subwf	WritePwmPercentage@Percentage+1,w
+  1689  01B8  3015               	movlw	21
+  1690  01B9  1903               	skipnz
+  1691  01BA  0238               	subwf	WritePwmPercentage@Percentage,w
+  1692  01BB  1C03               	skipc
+  1693  01BC  29C1               	goto	l212
+  1694                           
+  1695                           ;Pwm.c: 7: Percentage=276;
+  1696  01BD  3014               	movlw	20
+  1697  01BE  00B8               	movwf	WritePwmPercentage@Percentage
+  1698  01BF  3001               	movlw	1
+  1699  01C0  00B9               	movwf	WritePwmPercentage@Percentage+1
+  1700  01C1                     l212:	
+  1701                           
+  1702                           ;Pwm.c: 9: if(AN == 1)
+  1703  01C1  083C               	movf	WritePwmPercentage@AN,w
+  1704  01C2  3A01               	xorlw	1
+  1705  01C3  1D03               	skipz
+  1706  01C4  29DC               	goto	l1217
+  1707                           
+  1708                           ;Pwm.c: 10: {
+  1709                           ;Pwm.c: 11: PWM1DCH = Percentage>>2;
+  1710  01C5  0839               	movf	WritePwmPercentage@Percentage+1,w
+  1711  01C6  00BB               	movwf	??_WritePwmPercentage+1
+  1712  01C7  0838               	movf	WritePwmPercentage@Percentage,w
+  1713  01C8  00BA               	movwf	??_WritePwmPercentage
+  1714  01C9  36BB               	lsrf	??_WritePwmPercentage+1,f
+  1715  01CA  0CBA               	rrf	??_WritePwmPercentage,f
+  1716  01CB  36BB               	lsrf	??_WritePwmPercentage+1,f
+  1717  01CC  0CBA               	rrf	??_WritePwmPercentage,f
+  1718  01CD  083A               	movf	??_WritePwmPercentage,w
+  1719  01CE  002C               	movlb	12	; select bank12
+  1720  01CF  0092               	movwf	18	;volatile
+  1721                           
+  1722                           ;Pwm.c: 12: PWM1DCL = Percentage<<6;
+  1723  01D0  0020               	movlb	0	; select bank0
+  1724  01D1  0838               	movf	WritePwmPercentage@Percentage,w
+  1725  01D2  00BA               	movwf	??_WritePwmPercentage
+  1726  01D3  3005               	movlw	5
+  1727  01D4                     u885:	
+  1728  01D4  35BA               	lslf	??_WritePwmPercentage,f
+  1729  01D5  3EFF               	addlw	-1
+  1730  01D6  1D03               	skipz
+  1731  01D7  29D4               	goto	u885
+  1732  01D8  353A               	lslf	??_WritePwmPercentage,w
+  1733  01D9  002C               	movlb	12	; select bank12
+  1734  01DA  0091               	movwf	17	;volatile
+  1735                           
+  1736                           ;Pwm.c: 13: }
+  1737  01DB  0008               	return
+  1738  01DC                     l1217:	
+  1739                           
+  1740                           ;Pwm.c: 14: else if(AN == 2)
+  1741  01DC  0020               	movlb	0	; select bank0
+  1742  01DD  083C               	movf	WritePwmPercentage@AN,w
+  1743  01DE  3A02               	xorlw	2
+  1744  01DF  1D03               	skipz
+  1745  01E0  29F8               	goto	l1221
+  1746                           
+  1747                           ;Pwm.c: 15: {
+  1748                           ;Pwm.c: 16: PWM2DCH = Percentage>>2;
+  1749  01E1  0839               	movf	WritePwmPercentage@Percentage+1,w
+  1750  01E2  00BB               	movwf	??_WritePwmPercentage+1
+  1751  01E3  0838               	movf	WritePwmPercentage@Percentage,w
+  1752  01E4  00BA               	movwf	??_WritePwmPercentage
+  1753  01E5  36BB               	lsrf	??_WritePwmPercentage+1,f
+  1754  01E6  0CBA               	rrf	??_WritePwmPercentage,f
+  1755  01E7  36BB               	lsrf	??_WritePwmPercentage+1,f
+  1756  01E8  0CBA               	rrf	??_WritePwmPercentage,f
+  1757  01E9  083A               	movf	??_WritePwmPercentage,w
+  1758  01EA  002C               	movlb	12	; select bank12
+  1759  01EB  0095               	movwf	21	;volatile
+  1760                           
+  1761                           ;Pwm.c: 17: PWM2DCL = Percentage<<6;
+  1762  01EC  0020               	movlb	0	; select bank0
+  1763  01ED  0838               	movf	WritePwmPercentage@Percentage,w
+  1764  01EE  00BA               	movwf	??_WritePwmPercentage
+  1765  01EF  3005               	movlw	5
+  1766  01F0                     u905:	
+  1767  01F0  35BA               	lslf	??_WritePwmPercentage,f
+  1768  01F1  3EFF               	addlw	-1
+  1769  01F2  1D03               	skipz
+  1770  01F3  29F0               	goto	u905
+  1771  01F4  353A               	lslf	??_WritePwmPercentage,w
+  1772  01F5  002C               	movlb	12	; select bank12
+  1773  01F6  0094               	movwf	20	;volatile
+  1774                           
+  1775                           ;Pwm.c: 18: }
+  1776  01F7  0008               	return
+  1777  01F8                     l1221:	
+  1778                           
+  1779                           ;Pwm.c: 19: else if(AN == 3)
+  1780  01F8  0020               	movlb	0	; select bank0
+  1781  01F9  083C               	movf	WritePwmPercentage@AN,w
+  1782  01FA  3A03               	xorlw	3
+  1783  01FB  1D03               	skipz
+  1784  01FC  2A14               	goto	l1225
+  1785                           
+  1786                           ;Pwm.c: 20: {
+  1787                           ;Pwm.c: 21: PWM3DCH = Percentage>>2;
+  1788  01FD  0839               	movf	WritePwmPercentage@Percentage+1,w
+  1789  01FE  00BB               	movwf	??_WritePwmPercentage+1
+  1790  01FF  0838               	movf	WritePwmPercentage@Percentage,w
+  1791  0200  00BA               	movwf	??_WritePwmPercentage
+  1792  0201  36BB               	lsrf	??_WritePwmPercentage+1,f
+  1793  0202  0CBA               	rrf	??_WritePwmPercentage,f
+  1794  0203  36BB               	lsrf	??_WritePwmPercentage+1,f
+  1795  0204  0CBA               	rrf	??_WritePwmPercentage,f
+  1796  0205  083A               	movf	??_WritePwmPercentage,w
+  1797  0206  002C               	movlb	12	; select bank12
+  1798  0207  0098               	movwf	24	;volatile
+  1799                           
+  1800                           ;Pwm.c: 22: PWM3DCL = Percentage<<6;
+  1801  0208  0020               	movlb	0	; select bank0
+  1802  0209  0838               	movf	WritePwmPercentage@Percentage,w
+  1803  020A  00BA               	movwf	??_WritePwmPercentage
+  1804  020B  3005               	movlw	5
+  1805  020C                     u925:	
+  1806  020C  35BA               	lslf	??_WritePwmPercentage,f
+  1807  020D  3EFF               	addlw	-1
+  1808  020E  1D03               	skipz
+  1809  020F  2A0C               	goto	u925
+  1810  0210  353A               	lslf	??_WritePwmPercentage,w
+  1811  0211  002C               	movlb	12	; select bank12
+  1812  0212  0097               	movwf	23	;volatile
+  1813                           
+  1814                           ;Pwm.c: 23: }
+  1815  0213  0008               	return
+  1816  0214                     l1225:	
+  1817                           
+  1818                           ;Pwm.c: 24: else if(AN == 4)
+  1819  0214  0020               	movlb	0	; select bank0
+  1820  0215  083C               	movf	WritePwmPercentage@AN,w
+  1821  0216  3A04               	xorlw	4
+  1822  0217  1D03               	skipz
+  1823  0218  0008               	return
+  1824                           
+  1825                           ;Pwm.c: 25: {
+  1826                           ;Pwm.c: 26: PWM4DCH = Percentage>>2;
+  1827  0219  0839               	movf	WritePwmPercentage@Percentage+1,w
+  1828  021A  00BB               	movwf	??_WritePwmPercentage+1
+  1829  021B  0838               	movf	WritePwmPercentage@Percentage,w
+  1830  021C  00BA               	movwf	??_WritePwmPercentage
+  1831  021D  36BB               	lsrf	??_WritePwmPercentage+1,f
+  1832  021E  0CBA               	rrf	??_WritePwmPercentage,f
+  1833  021F  36BB               	lsrf	??_WritePwmPercentage+1,f
+  1834  0220  0CBA               	rrf	??_WritePwmPercentage,f
+  1835  0221  083A               	movf	??_WritePwmPercentage,w
+  1836  0222  002C               	movlb	12	; select bank12
+  1837  0223  009B               	movwf	27	;volatile
+  1838                           
+  1839                           ;Pwm.c: 27: PWM4DCL = Percentage<<6;
+  1840  0224  0020               	movlb	0	; select bank0
+  1841  0225  0838               	movf	WritePwmPercentage@Percentage,w
+  1842  0226  00BA               	movwf	??_WritePwmPercentage
+  1843  0227  3005               	movlw	5
+  1844  0228                     u945:	
+  1845  0228  35BA               	lslf	??_WritePwmPercentage,f
+  1846  0229  3EFF               	addlw	-1
+  1847  022A  1D03               	skipz
+  1848  022B  2A28               	goto	u945
+  1849  022C  353A               	lslf	??_WritePwmPercentage,w
+  1850  022D  002C               	movlb	12	; select bank12
+  1851  022E  009A               	movwf	26	;volatile
+  1852  022F  0008               	return
+  1853  0230                     __end_of_WritePwmPercentage:	
+  1854                           
+  1855                           	psect	text6
+  1856  0282                     __ptext6:	
+  1857 ;; *************** function _SaveDataToFlash *****************
+  1858 ;; Defined at:
+  1859 ;;		line 96 in file "sur/Main.c"
+  1860 ;; Parameters:    Size  Location     Type
+  1861 ;;		None
+  1862 ;; Auto vars:     Size  Location     Type
+  1863 ;;  AddrTemp        1    7[BANK0 ] unsigned char 
+  1864 ;; Return value:  Size  Location     Type
+  1865 ;;		None               void
+  1866 ;; Registers used:
+  1867 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  1868 ;; Tracked objects:
+  1869 ;;		On entry : 0/0
+  1870 ;;		On exit  : 0/0
+  1871 ;;		Unchanged: 0/0
+  1872 ;; Data sizes:     COMMON   BANK0
+  1873 ;;      Params:         0       0
+  1874 ;;      Locals:         0       1
+  1875 ;;      Temps:          0       1
+  1876 ;;      Totals:         0       2
+  1877 ;;Total ram usage:        2 bytes
+  1878 ;; Hardware stack levels used:    1
+  1879 ;; Hardware stack levels required when called:    3
+  1880 ;; This function calls:
+  1881 ;;		_flash_memory_erase
+  1882 ;;		_flash_memory_read
+  1883 ;;		_flash_memory_write
+  1884 ;; This function is called by:
+  1885 ;;		_IrDeal
+  1886 ;; This function uses a non-reentrant model
+  1887 ;;
+  1888                           
+  1889                           
+  1890                           ;psect for function _SaveDataToFlash
+  1891  0282                     _SaveDataToFlash:	
+  1892                           
+  1893                           ;Main.c: 98: unsigned char AddrTemp;
+  1894                           ;Main.c: 99: AddrTemp=flash_memory_read(112);
+  1895                           
+  1896                           ;incstack = 0
+  1897                           ; Regs used in _SaveDataToFlash: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
+  1898  0282  3070               	movlw	112
+  1899  0283  2354               	fcall	_flash_memory_read
+  1900  0284  0020               	movlb	0	; select bank0
+  1901  0285  00BA               	movwf	??_SaveDataToFlash
+  1902  0286  083A               	movf	??_SaveDataToFlash,w
+  1903  0287  00BB               	movwf	SaveDataToFlash@AddrTemp
+  1904                           
+  1905                           ;Main.c: 100: if(DimmingNumBackup!=DimmingNum)
+  1906  0288  0841               	movf	_DimmingNumBackup,w
+  1907  0289  0642               	xorwf	_DimmingNum,w
+  1908  028A  1903               	skipnz
+  1909  028B  0008               	return
+  1910                           
+  1911                           ;Main.c: 101: {
+  1912                           ;Main.c: 102: if(AddrTemp>=15)
+  1913  028C  300F               	movlw	15
+  1914  028D  023B               	subwf	SaveDataToFlash@AddrTemp,w
+  1915  028E  1C03               	skipc
+  1916  028F  2A93               	goto	l1621
+  1917                           
+  1918                           ;Main.c: 103: {
+  1919                           ;Main.c: 104: AddrTemp=1;
+  1920  0290  01BB               	clrf	SaveDataToFlash@AddrTemp
+  1921  0291  0ABB               	incf	SaveDataToFlash@AddrTemp,f
+  1922                           
+  1923                           ;Main.c: 105: }
+  1924  0292  2A97               	goto	l1623
+  1925  0293                     l1621:	
+  1926                           
+  1927                           ;Main.c: 106: else
+  1928                           ;Main.c: 107: {
+  1929                           ;Main.c: 108: AddrTemp+=1;
+  1930  0293  3001               	movlw	1
+  1931  0294  00BA               	movwf	??_SaveDataToFlash
+  1932  0295  083A               	movf	??_SaveDataToFlash,w
+  1933  0296  07BB               	addwf	SaveDataToFlash@AddrTemp,f
+  1934  0297                     l1623:	
+  1935                           
+  1936                           ;Main.c: 109: }
+  1937                           ;Main.c: 110: flash_memory_erase(7);
+  1938  0297  3007               	movlw	7
+  1939  0298  22E4               	fcall	_flash_memory_erase
+  1940                           
+  1941                           ;Main.c: 111: flash_memory_write(112, &AddrTemp,1);
+  1942  0299  303B               	movlw	SaveDataToFlash@AddrTemp& (0+255)
+  1943  029A  0020               	movlb	0	; select bank0
+  1944  029B  00BA               	movwf	??_SaveDataToFlash
+  1945  029C  083A               	movf	??_SaveDataToFlash,w
+  1946  029D  00F4               	movwf	flash_memory_write@data
+  1947  029E  01F5               	clrf	flash_memory_write@datalen
+  1948  029F  0AF5               	incf	flash_memory_write@datalen,f
+  1949  02A0  3070               	movlw	112
+  1950  02A1  2230               	fcall	_flash_memory_write
+  1951                           
+  1952                           ;Main.c: 112: DimmingNumBackup=DimmingNum;
+  1953  02A2  0020               	movlb	0	; select bank0
+  1954  02A3  0842               	movf	_DimmingNum,w
+  1955  02A4  00BA               	movwf	??_SaveDataToFlash
+  1956  02A5  083A               	movf	??_SaveDataToFlash,w
+  1957  02A6  00C1               	movwf	_DimmingNumBackup
+  1958                           
+  1959                           ;Main.c: 113: AddrTemp=AddrTemp+112;
+  1960  02A7  083B               	movf	SaveDataToFlash@AddrTemp,w
+  1961  02A8  3E70               	addlw	112
+  1962  02A9  00BA               	movwf	??_SaveDataToFlash
+  1963  02AA  083A               	movf	??_SaveDataToFlash,w
+  1964  02AB  00BB               	movwf	SaveDataToFlash@AddrTemp
+  1965                           
+  1966                           ;Main.c: 114: flash_memory_write(AddrTemp, &DimmingNum,1);
+  1967  02AC  3042               	movlw	_DimmingNum& (0+255)
+  1968  02AD  00BA               	movwf	??_SaveDataToFlash
+  1969  02AE  083A               	movf	??_SaveDataToFlash,w
+  1970  02AF  00F4               	movwf	flash_memory_write@data
+  1971  02B0  01F5               	clrf	flash_memory_write@datalen
+  1972  02B1  0AF5               	incf	flash_memory_write@datalen,f
+  1973  02B2  083B               	movf	SaveDataToFlash@AddrTemp,w
+  1974  02B3  2230               	fcall	_flash_memory_write
+  1975  02B4  0008               	return
+  1976  02B5                     __end_of_SaveDataToFlash:	
+  1977                           
+  1978                           	psect	text7
+  1979  0230                     __ptext7:	
+  1980 ;; *************** function _flash_memory_write *****************
+  1981 ;; Defined at:
+  1982 ;;		line 75 in file "sur/flash_routines.c"
+  1983 ;; Parameters:    Size  Location     Type
+  1984 ;;  address         1    wreg     unsigned char 
+  1985 ;;  data            1    4[COMMON] PTR unsigned char 
+  1986 ;;		 -> SaveDataToFlash@AddrTemp(1), DimmingNum(1), 
+  1987 ;;  datalen         1    5[COMMON] unsigned char 
+  1988 ;; Auto vars:     Size  Location     Type
+  1989 ;;  address         1    2[BANK0 ] unsigned char 
+  1990 ;;  AddrBuf         2    4[BANK0 ] unsigned int 
+  1991 ;;  wdi             1    3[BANK0 ] unsigned char 
+  1992 ;; Return value:  Size  Location     Type
+  1993 ;;		None               void
+  1994 ;; Registers used:
+  1995 ;;		wreg, fsr1l, fsr1h, status,2, status,0
+  1996 ;; Tracked objects:
+  1997 ;;		On entry : 0/0
+  1998 ;;		On exit  : 0/0
+  1999 ;;		Unchanged: 0/0
+  2000 ;; Data sizes:     COMMON   BANK0
+  2001 ;;      Params:         2       0
+  2002 ;;      Locals:         0       4
+  2003 ;;      Temps:          0       2
+  2004 ;;      Totals:         2       6
+  2005 ;;Total ram usage:        8 bytes
+  2006 ;; Hardware stack levels used:    1
+  2007 ;; Hardware stack levels required when called:    2
+  2008 ;; This function calls:
+  2009 ;;		Nothing
+  2010 ;; This function is called by:
+  2011 ;;		_SaveDataToFlash
+  2012 ;; This function uses a non-reentrant model
+  2013 ;;
+  2014                           
+  2015                           
+  2016                           ;psect for function _flash_memory_write
+  2017  0230                     _flash_memory_write:	
+  2018                           
+  2019                           ;incstack = 0
+  2020                           ; Regs used in _flash_memory_write: [wreg+fsr1l+fsr1h+status,2+status,0]
+  2021                           ;flash_memory_write@address stored from wreg
+  2022  0230  0020               	movlb	0	; select bank0
+  2023  0231  00B6               	movwf	flash_memory_write@address
+  2024                           
+  2025                           ;flash_routines.c: 77: unsigned char wdi=0;
+  2026  0232  01B7               	clrf	flash_memory_write@wdi
+  2027                           
+  2028                           ;flash_routines.c: 78: unsigned int AddrBuf;
+  2029                           ;flash_routines.c: 79: if(datalen==0)
+  2030  0233  08F5               	movf	flash_memory_write@datalen,f
+  2031  0234  1903               	btfsc	3,2
+  2032  0235  0008               	return
+  2033                           
+  2034                           ;flash_routines.c: 81: INTCONbits.GIE = 0;
+  2035                           
+  2036                           ;flash_routines.c: 80: return;
+  2037  0236  138B               	bcf	11,7	;volatile
+  2038                           
+  2039                           ;flash_routines.c: 82: AddrBuf=0x0380;
+  2040  0237  3080               	movlw	128
+  2041  0238  00B8               	movwf	flash_memory_write@AddrBuf
+  2042  0239  3003               	movlw	3
+  2043  023A  00B9               	movwf	flash_memory_write@AddrBuf+1
+  2044                           
+  2045                           ;flash_routines.c: 83: AddrBuf+=address;
+  2046  023B  0836               	movf	flash_memory_write@address,w
+  2047  023C  00B4               	movwf	??_flash_memory_write
+  2048  023D  01B5               	clrf	??_flash_memory_write+1
+  2049  023E  0834               	movf	??_flash_memory_write,w
+  2050  023F  07B8               	addwf	flash_memory_write@AddrBuf,f
+  2051  0240  0835               	movf	??_flash_memory_write+1,w
+  2052  0241  3DB9               	addwfc	flash_memory_write@AddrBuf+1,f
+  2053                           
+  2054                           ;flash_routines.c: 84: PMADRL=((AddrBuf)&0xff);
+  2055  0242  0838               	movf	flash_memory_write@AddrBuf,w
+  2056  0243  0023               	movlb	3	; select bank3
+  2057  0244  0091               	movwf	17	;volatile
+  2058                           
+  2059                           ;flash_routines.c: 85: PMADRH=((AddrBuf)>>8);
+  2060  0245  0020               	movlb	0	; select bank0
+  2061  0246  0839               	movf	flash_memory_write@AddrBuf+1,w
+  2062  0247  0023               	movlb	3	; select bank3
+  2063  0248  0092               	movwf	18	;volatile
+  2064                           
+  2065                           ;flash_routines.c: 86: PMCON1bits.CFGS = 0;
+  2066  0249  1315               	bcf	21,6	;volatile
+  2067                           
+  2068                           ;flash_routines.c: 87: PMCON1bits.FREE = 0;
+  2069  024A  1215               	bcf	21,4	;volatile
+  2070                           
+  2071                           ;flash_routines.c: 88: PMCON1bits.LWLO = 1;
+  2072  024B  1695               	bsf	21,5	;volatile
+  2073                           
+  2074                           ;flash_routines.c: 89: PMCON1bits.WREN = 1;
+  2075  024C  1515               	bsf	21,2	;volatile
+  2076  024D                     l242:	
+  2077                           ;flash_routines.c: 91: while(1)
+  2078                           
+  2079                           
+  2080                           ;flash_routines.c: 92: {
+  2081                           ;flash_routines.c: 93: PMDATH = 0x00;
+  2082  024D  0023               	movlb	3	; select bank3
+  2083  024E  0194               	clrf	20	;volatile
+  2084                           
+  2085                           ;flash_routines.c: 94: PMDATL = data[wdi];
+  2086  024F  0020               	movlb	0	; select bank0
+  2087  0250  0837               	movf	flash_memory_write@wdi,w
+  2088  0251  0774               	addwf	flash_memory_write@data,w
+  2089  0252  00B4               	movwf	??_flash_memory_write
+  2090  0253  0834               	movf	??_flash_memory_write,w
+  2091  0254  0086               	movwf	6
+  2092  0255  0187               	clrf	7
+  2093  0256  0801               	movf	1,w
+  2094  0257  0023               	movlb	3	; select bank3
+  2095  0258  0093               	movwf	19	;volatile
+  2096                           
+  2097                           ;flash_routines.c: 97: PMCON2 = 0x55;
+  2098  0259  3055               	movlw	85
+  2099  025A  0096               	movwf	22	;volatile
+  2100                           
+  2101                           ;flash_routines.c: 98: PMCON2 = 0xAA;
+  2102  025B  30AA               	movlw	170
+  2103  025C  0096               	movwf	22	;volatile
+  2104                           
+  2105                           ;flash_routines.c: 99: PMCON1bits.WR = 1;
+  2106  025D  1495               	bsf	21,1	;volatile
+  2107  025E  0000               	nop	; ;# 
+  2108  025F  0000               	nop	; ;# 
+  2109  0260  0000               	nop	; ;# 
+  2110  0261  0000               	nop	; ;# 
+  2111                           
+  2112                           ;flash_routines.c: 106: datalen-=1;
+  2113  0262  3001               	movlw	1
+  2114  0263  02F5               	subwf	flash_memory_write@datalen,f
+  2115                           
+  2116                           ;flash_routines.c: 107: if(datalen==0)
+  2117  0264  08F5               	movf	flash_memory_write@datalen,f
+  2118  0265  1903               	btfsc	3,2
+  2119  0266  2A73               	goto	l244
+  2120                           
+  2121                           ;flash_routines.c: 109: PMADRL++;
+  2122                           
+  2123                           ;flash_routines.c: 108: break;
+  2124  0267  3001               	movlw	1
+  2125  0268  0020               	movlb	0	; select bank0
+  2126  0269  00B4               	movwf	??_flash_memory_write
+  2127  026A  0834               	movf	??_flash_memory_write,w
+  2128  026B  0023               	movlb	3	; select bank3
+  2129  026C  0791               	addwf	17,f	;volatile
+  2130                           
+  2131                           ;flash_routines.c: 110: wdi++;
+  2132  026D  3001               	movlw	1
+  2133  026E  0020               	movlb	0	; select bank0
+  2134  026F  00B4               	movwf	??_flash_memory_write
+  2135  0270  0834               	movf	??_flash_memory_write,w
+  2136  0271  07B7               	addwf	flash_memory_write@wdi,f
+  2137  0272  2A4D               	goto	l242
+  2138  0273                     l244:	
+  2139                           
+  2140                           ;flash_routines.c: 111: }
+  2141                           ;flash_routines.c: 113: PMCON1bits.LWLO = 0;
+  2142  0273  0023               	movlb	3	; select bank3
+  2143  0274  1295               	bcf	21,5	;volatile
+  2144                           
+  2145                           ;flash_routines.c: 116: PMCON2 = 0x55;
+  2146  0275  3055               	movlw	85
+  2147  0276  0096               	movwf	22	;volatile
+  2148                           
+  2149                           ;flash_routines.c: 117: PMCON2 = 0xAA;
+  2150  0277  30AA               	movlw	170
+  2151  0278  0096               	movwf	22	;volatile
+  2152                           
+  2153                           ;flash_routines.c: 118: PMCON1bits.WR = 1;
+  2154  0279  1495               	bsf	21,1	;volatile
+  2155  027A  0000               	nop	; ;# 
+  2156  027B  0000               	nop	; ;# 
+  2157  027C  0000               	nop	; ;# 
+  2158  027D  0000               	nop	; ;# 
+  2159                           
+  2160                           ;flash_routines.c: 126: PMCON1bits.WREN = 0;
+  2161  027E  0023               	movlb	3	; select bank3
+  2162  027F  1115               	bcf	21,2	;volatile
+  2163                           
+  2164                           ;flash_routines.c: 127: INTCONbits.GIE = 1;
+  2165  0280  178B               	bsf	11,7	;volatile
+  2166  0281  0008               	return
+  2167  0282                     __end_of_flash_memory_write:	
+  2168                           
+  2169                           	psect	text8
+  2170  02E4                     __ptext8:	
+  2171 ;; *************** function _flash_memory_erase *****************
+  2172 ;; Defined at:
+  2173 ;;		line 136 in file "sur/flash_routines.c"
+  2174 ;; Parameters:    Size  Location     Type
+  2175 ;;  Page            1    wreg     unsigned char 
+  2176 ;; Auto vars:     Size  Location     Type
+  2177 ;;  Page            1    0[BANK0 ] unsigned char 
+  2178 ;;  AddrBuf         2    1[BANK0 ] unsigned int 
+  2179 ;; Return value:  Size  Location     Type
+  2180 ;;		None               void
+  2181 ;; Registers used:
+  2182 ;;		wreg, status,2
+  2183 ;; Tracked objects:
+  2184 ;;		On entry : 0/0
+  2185 ;;		On exit  : 0/0
+  2186 ;;		Unchanged: 0/0
+  2187 ;; Data sizes:     COMMON   BANK0
+  2188 ;;      Params:         0       0
+  2189 ;;      Locals:         0       3
+  2190 ;;      Temps:          2       0
+  2191 ;;      Totals:         2       3
+  2192 ;;Total ram usage:        5 bytes
+  2193 ;; Hardware stack levels used:    1
+  2194 ;; Hardware stack levels required when called:    2
+  2195 ;; This function calls:
+  2196 ;;		Nothing
+  2197 ;; This function is called by:
+  2198 ;;		_SaveDataToFlash
+  2199 ;; This function uses a non-reentrant model
+  2200 ;;
+  2201                           
+  2202                           
+  2203                           ;psect for function _flash_memory_erase
+  2204  02E4                     _flash_memory_erase:	
+  2205                           
+  2206                           ;incstack = 0
+  2207                           ; Regs used in _flash_memory_erase: [wreg+status,2]
+  2208                           ;flash_memory_erase@Page stored from wreg
+  2209  02E4  0020               	movlb	0	; select bank0
+  2210  02E5  00B4               	movwf	flash_memory_erase@Page
+  2211                           
+  2212                           ;flash_routines.c: 139: unsigned int AddrBuf;
+  2213                           ;flash_routines.c: 140: INTCONbits.GIE = 0;
+  2214  02E6  138B               	bcf	11,7	;volatile
+  2215                           
+  2216                           ;flash_routines.c: 141: AddrBuf=0x0380;
+  2217  02E7  3080               	movlw	128
+  2218  02E8  00B5               	movwf	flash_memory_erase@AddrBuf
+  2219  02E9  3003               	movlw	3
+  2220  02EA  00B6               	movwf	flash_memory_erase@AddrBuf+1
+  2221                           
+  2222                           ;flash_routines.c: 142: AddrBuf+=(Page*16);
+  2223  02EB  0834               	movf	flash_memory_erase@Page,w
+  2224  02EC  00F4               	movwf	??_flash_memory_erase
+  2225  02ED  01F5               	clrf	??_flash_memory_erase+1
+  2226  02EE  0EF4               	swapf	??_flash_memory_erase,f
+  2227  02EF  0EF5               	swapf	??_flash_memory_erase+1,f
+  2228  02F0  30F0               	movlw	240
+  2229  02F1  05F5               	andwf	??_flash_memory_erase+1,f
+  2230  02F2  0874               	movf	??_flash_memory_erase,w
+  2231  02F3  390F               	andlw	15
+  2232  02F4  04F5               	iorwf	??_flash_memory_erase+1,f
+  2233  02F5  30F0               	movlw	240
+  2234  02F6  05F4               	andwf	??_flash_memory_erase,f
+  2235  02F7  0874               	movf	??_flash_memory_erase,w
+  2236  02F8  07B5               	addwf	flash_memory_erase@AddrBuf,f
+  2237  02F9  0875               	movf	??_flash_memory_erase+1,w
+  2238  02FA  3DB6               	addwfc	flash_memory_erase@AddrBuf+1,f
+  2239                           
+  2240                           ;flash_routines.c: 143: PMADRL=((AddrBuf)&0xff);
+  2241  02FB  0835               	movf	flash_memory_erase@AddrBuf,w
+  2242  02FC  0023               	movlb	3	; select bank3
+  2243  02FD  0091               	movwf	17	;volatile
+  2244                           
+  2245                           ;flash_routines.c: 144: PMADRH=((AddrBuf)>>8);
+  2246  02FE  0020               	movlb	0	; select bank0
+  2247  02FF  0836               	movf	flash_memory_erase@AddrBuf+1,w
+  2248  0300  0023               	movlb	3	; select bank3
+  2249  0301  0092               	movwf	18	;volatile
+  2250                           
+  2251                           ;flash_routines.c: 145: PMCON1bits.CFGS = 0;
+  2252  0302  1315               	bcf	21,6	;volatile
+  2253                           
+  2254                           ;flash_routines.c: 146: PMCON1bits.WREN = 1;
+  2255  0303  1515               	bsf	21,2	;volatile
+  2256                           
+  2257                           ;flash_routines.c: 147: PMCON1bits.FREE = 1;
+  2258  0304  1615               	bsf	21,4	;volatile
+  2259                           
+  2260                           ;flash_routines.c: 149: PMCON2 = 0x55;
+  2261  0305  3055               	movlw	85
+  2262  0306  0096               	movwf	22	;volatile
+  2263                           
+  2264                           ;flash_routines.c: 150: PMCON2 = 0xAA;
+  2265  0307  30AA               	movlw	170
+  2266  0308  0096               	movwf	22	;volatile
+  2267                           
+  2268                           ;flash_routines.c: 151: PMCON1bits.WR = 1;
+  2269  0309  1495               	bsf	21,1	;volatile
+  2270  030A  0000               	nop	; ;# 
+  2271  030B  0000               	nop	; ;# 
+  2272  030C  0000               	nop	; ;# 
+  2273  030D  0000               	nop	; ;# 
+  2274                           
+  2275                           ;flash_routines.c: 158: PMCON1bits.WREN = 0;
+  2276  030E  0023               	movlb	3	; select bank3
+  2277  030F  1115               	bcf	21,2	;volatile
+  2278                           
+  2279                           ;flash_routines.c: 159: INTCONbits.GIE = 1;
+  2280  0310  178B               	bsf	11,7	;volatile
+  2281  0311  0008               	return
+  2282  0312                     __end_of_flash_memory_erase:	
+  2283                           
+  2284                           	psect	text9
+  2285  03C6                     __ptext9:	
+  2286 ;; *************** function _ReadDataFromFlash *****************
+  2287 ;; Defined at:
+  2288 ;;		line 118 in file "sur/Main.c"
+  2289 ;; Parameters:    Size  Location     Type
+  2290 ;;		None
+  2291 ;; Auto vars:     Size  Location     Type
+  2292 ;;  AddrTemp        1    4[BANK0 ] unsigned char 
+  2293 ;; Return value:  Size  Location     Type
+  2294 ;;		None               void
+  2295 ;; Registers used:
+  2296 ;;		wreg, status,2, status,0, pclath, cstack
+  2297 ;; Tracked objects:
+  2298 ;;		On entry : 0/0
+  2299 ;;		On exit  : 0/0
+  2300 ;;		Unchanged: 0/0
+  2301 ;; Data sizes:     COMMON   BANK0
+  2302 ;;      Params:         0       0
+  2303 ;;      Locals:         0       1
+  2304 ;;      Temps:          0       1
+  2305 ;;      Totals:         0       2
+  2306 ;;Total ram usage:        2 bytes
+  2307 ;; Hardware stack levels used:    1
+  2308 ;; Hardware stack levels required when called:    3
+  2309 ;; This function calls:
+  2310 ;;		_flash_memory_read
+  2311 ;; This function is called by:
+  2312 ;;		_main
+  2313 ;;		_IrDeal
+  2314 ;; This function uses a non-reentrant model
+  2315 ;;
+  2316                           
+  2317                           
+  2318                           ;psect for function _ReadDataFromFlash
+  2319  03C6                     _ReadDataFromFlash:	
+  2320                           
+  2321                           ;Main.c: 120: unsigned char AddrTemp;
+  2322                           ;Main.c: 121: AddrTemp=flash_memory_read(112);
+  2323                           
+  2324                           ;incstack = 0
+  2325                           ; Regs used in _ReadDataFromFlash: [wreg+status,2+status,0+pclath+cstack]
+  2326  03C6  3070               	movlw	112
+  2327  03C7  2354               	fcall	_flash_memory_read
+  2328  03C8  0020               	movlb	0	; select bank0
+  2329  03C9  00B7               	movwf	??_ReadDataFromFlash
+  2330  03CA  0837               	movf	??_ReadDataFromFlash,w
+  2331  03CB  00B8               	movwf	ReadDataFromFlash@AddrTemp
+  2332                           
+  2333                           ;Main.c: 122: AddrTemp=AddrTemp+112;
+  2334  03CC  0838               	movf	ReadDataFromFlash@AddrTemp,w
+  2335  03CD  3E70               	addlw	112
+  2336  03CE  00B7               	movwf	??_ReadDataFromFlash
+  2337  03CF  0837               	movf	??_ReadDataFromFlash,w
+  2338  03D0  00B8               	movwf	ReadDataFromFlash@AddrTemp
+  2339                           
+  2340                           ;Main.c: 123: DimmingNumBackup=DimmingNum=flash_memory_read(AddrTemp);
+  2341  03D1  0838               	movf	ReadDataFromFlash@AddrTemp,w
+  2342  03D2  2354               	fcall	_flash_memory_read
+  2343  03D3  0020               	movlb	0	; select bank0
+  2344  03D4  00C2               	movwf	_DimmingNum
+  2345  03D5  00B7               	movwf	??_ReadDataFromFlash
+  2346  03D6  0837               	movf	??_ReadDataFromFlash,w
+  2347  03D7  00C1               	movwf	_DimmingNumBackup
+  2348  03D8  0008               	return
+  2349  03D9                     __end_of_ReadDataFromFlash:	
+  2350                           
+  2351                           	psect	text10
+  2352  0354                     __ptext10:	
+  2353 ;; *************** function _flash_memory_read *****************
+  2354 ;; Defined at:
+  2355 ;;		line 46 in file "sur/flash_routines.c"
+  2356 ;; Parameters:    Size  Location     Type
+  2357 ;;  address         1    wreg     unsigned char 
+  2358 ;; Auto vars:     Size  Location     Type
+  2359 ;;  address         1    0[BANK0 ] unsigned char 
+  2360 ;;  AddrBuf         2    1[BANK0 ] unsigned int 
+  2361 ;; Return value:  Size  Location     Type
+  2362 ;;                  1    wreg      unsigned char 
+  2363 ;; Registers used:
+  2364 ;;		wreg, status,2
+  2365 ;; Tracked objects:
+  2366 ;;		On entry : 0/0
+  2367 ;;		On exit  : 0/0
+  2368 ;;		Unchanged: 0/0
+  2369 ;; Data sizes:     COMMON   BANK0
+  2370 ;;      Params:         0       0
+  2371 ;;      Locals:         0       3
+  2372 ;;      Temps:          2       0
+  2373 ;;      Totals:         2       3
+  2374 ;;Total ram usage:        5 bytes
+  2375 ;; Hardware stack levels used:    1
+  2376 ;; Hardware stack levels required when called:    2
+  2377 ;; This function calls:
+  2378 ;;		Nothing
+  2379 ;; This function is called by:
+  2380 ;;		_SaveDataToFlash
+  2381 ;;		_ReadDataFromFlash
+  2382 ;; This function uses a non-reentrant model
+  2383 ;;
+  2384                           
+  2385                           
+  2386                           ;psect for function _flash_memory_read
+  2387  0354                     _flash_memory_read:	
+  2388                           
+  2389                           ;incstack = 0
+  2390                           ; Regs used in _flash_memory_read: [wreg+status,2]
+  2391                           ;flash_memory_read@address stored from wreg
+  2392  0354  0020               	movlb	0	; select bank0
+  2393  0355  00B4               	movwf	flash_memory_read@address
+  2394                           
+  2395                           ;flash_routines.c: 51: unsigned int AddrBuf;
+  2396                           ;flash_routines.c: 52: INTCONbits.GIE = 0;
+  2397  0356  138B               	bcf	11,7	;volatile
+  2398                           
+  2399                           ;flash_routines.c: 53: AddrBuf=0x0380;
+  2400  0357  3080               	movlw	128
+  2401  0358  00B5               	movwf	flash_memory_read@AddrBuf
+  2402  0359  3003               	movlw	3
+  2403  035A  00B6               	movwf	flash_memory_read@AddrBuf+1
+  2404                           
+  2405                           ;flash_routines.c: 54: AddrBuf+=address;
+  2406  035B  0834               	movf	flash_memory_read@address,w
+  2407  035C  00F4               	movwf	??_flash_memory_read
+  2408  035D  01F5               	clrf	??_flash_memory_read+1
+  2409  035E  0874               	movf	??_flash_memory_read,w
+  2410  035F  07B5               	addwf	flash_memory_read@AddrBuf,f
+  2411  0360  0875               	movf	??_flash_memory_read+1,w
+  2412  0361  3DB6               	addwfc	flash_memory_read@AddrBuf+1,f
+  2413                           
+  2414                           ;flash_routines.c: 55: PMADRL=((AddrBuf)&0xff);
+  2415  0362  0835               	movf	flash_memory_read@AddrBuf,w
+  2416  0363  0023               	movlb	3	; select bank3
+  2417  0364  0091               	movwf	17	;volatile
+  2418                           
+  2419                           ;flash_routines.c: 56: PMADRH=((AddrBuf)>>8);
+  2420  0365  0020               	movlb	0	; select bank0
+  2421  0366  0836               	movf	flash_memory_read@AddrBuf+1,w
+  2422  0367  0023               	movlb	3	; select bank3
+  2423  0368  0092               	movwf	18	;volatile
+  2424                           
+  2425                           ;flash_routines.c: 57: PMCON1bits.CFGS = 0;
+  2426  0369  1315               	bcf	21,6	;volatile
+  2427                           
+  2428                           ;flash_routines.c: 58: PMCON1bits.RD = 1;
+  2429  036A  1415               	bsf	21,0	;volatile
+  2430  036B  0000               	nop	; ;# 
+  2431  036C  0000               	nop	; ;# 
+  2432  036D  0000               	nop	; ;# 
+  2433  036E  0000               	nop	; ;# 
+  2434                           
+  2435                           ;flash_routines.c: 65: INTCONbits.GIE = 1;
+  2436  036F  178B               	bsf	11,7	;volatile
+  2437                           
+  2438                           ;flash_routines.c: 66: return ((PMDATH)<<8 | (PMDATL));
+  2439  0370  0023               	movlb	3	; select bank3
+  2440  0371  0813               	movf	19,w	;volatile
+  2441  0372  0008               	return
+  2442  0373                     __end_of_flash_memory_read:	
+  2443                           
+  2444                           	psect	text11
+  2445  03D9                     __ptext11:	
+  2446 ;; *************** function _BzSet *****************
+  2447 ;; Defined at:
+  2448 ;;		line 292 in file "sur/Main.c"
+  2449 ;; Parameters:    Size  Location     Type
+  2450 ;;  Times           1    wreg     unsigned char 
+  2451 ;;  Long            2    4[COMMON] unsigned int 
+  2452 ;; Auto vars:     Size  Location     Type
+  2453 ;;  Times           1    1[BANK0 ] unsigned char 
+  2454 ;; Return value:  Size  Location     Type
+  2455 ;;		None               void
+  2456 ;; Registers used:
+  2457 ;;		wreg, status,2, status,0
+  2458 ;; Tracked objects:
+  2459 ;;		On entry : 0/0
+  2460 ;;		On exit  : 0/0
+  2461 ;;		Unchanged: 0/0
+  2462 ;; Data sizes:     COMMON   BANK0
+  2463 ;;      Params:         2       0
+  2464 ;;      Locals:         0       1
+  2465 ;;      Temps:          0       1
+  2466 ;;      Totals:         2       2
+  2467 ;;Total ram usage:        4 bytes
+  2468 ;; Hardware stack levels used:    1
+  2469 ;; Hardware stack levels required when called:    2
+  2470 ;; This function calls:
+  2471 ;;		Nothing
+  2472 ;; This function is called by:
+  2473 ;;		_IrDeal
+  2474 ;; This function uses a non-reentrant model
+  2475 ;;
+  2476                           
+  2477                           
+  2478                           ;psect for function _BzSet
+  2479  03D9                     _BzSet:	
+  2480                           
+  2481                           ;incstack = 0
+  2482                           ; Regs used in _BzSet: [wreg+status,2+status,0]
+  2483                           ;BzSet@Times stored from wreg
+  2484  03D9  0020               	movlb	0	; select bank0
+  2485  03DA  00B5               	movwf	BzSet@Times
+  2486                           
+  2487                           ;Main.c: 294: Bz.LongCnt=0;
+  2488  03DB  01A0               	clrf	_Bz
+  2489  03DC  01A1               	clrf	_Bz+1
+  2490                           
+  2491                           ;Main.c: 295: Bz.Long=Long;
+  2492  03DD  0875               	movf	BzSet@Long+1,w
+  2493  03DE  01A3               	clrf	_Bz+3
+  2494  03DF  07A3               	addwf	_Bz+3,f
+  2495  03E0  0874               	movf	BzSet@Long,w
+  2496  03E1  01A2               	clrf	_Bz+2
+  2497  03E2  07A2               	addwf	_Bz+2,f
+  2498                           
+  2499                           ;Main.c: 296: Bz.TimesCnt=0;
+  2500  03E3  01A4               	clrf	_Bz+4
+  2501                           
+  2502                           ;Main.c: 297: Bz.Times=Times;
+  2503  03E4  0835               	movf	BzSet@Times,w
+  2504  03E5  00B4               	movwf	??_BzSet
+  2505  03E6  0834               	movf	??_BzSet,w
+  2506  03E7  00A5               	movwf	_Bz+5
+  2507                           
+  2508                           ;Main.c: 298: Bz.BzSwitchFlg=1;
+  2509  03E8  1426               	bsf	_Bz+6,0
+  2510  03E9  0008               	return
+  2511  03EA                     __end_of_BzSet:	
+  2512                           
+  2513                           	psect	text12
+  2514  0312                     __ptext12:	
+  2515 ;; *************** function _Initialize *****************
+  2516 ;; Defined at:
+  2517 ;;		line 263 in file "sur/Main.c"
+  2518 ;; Parameters:    Size  Location     Type
+  2519 ;;		None
+  2520 ;; Auto vars:     Size  Location     Type
+  2521 ;;		None
+  2522 ;; Return value:  Size  Location     Type
+  2523 ;;		None               void
+  2524 ;; Registers used:
+  2525 ;;		wreg, status,2, status,0
+  2526 ;; Tracked objects:
+  2527 ;;		On entry : 0/0
+  2528 ;;		On exit  : 0/0
+  2529 ;;		Unchanged: 0/0
+  2530 ;; Data sizes:     COMMON   BANK0
+  2531 ;;      Params:         0       0
+  2532 ;;      Locals:         0       0
+  2533 ;;      Temps:          0       0
+  2534 ;;      Totals:         0       0
+  2535 ;;Total ram usage:        0 bytes
+  2536 ;; Hardware stack levels used:    1
+  2537 ;; Hardware stack levels required when called:    2
+  2538 ;; This function calls:
+  2539 ;;		Nothing
+  2540 ;; This function is called by:
+  2541 ;;		_main
+  2542 ;; This function uses a non-reentrant model
+  2543 ;;
+  2544                           
+  2545                           
+  2546                           ;psect for function _Initialize
+  2547  0312                     _Initialize:	
+  2548                           
+  2549                           ;Main.c: 265: OSCCON = 0x7a;
+  2550                           
+  2551                           ;incstack = 0
+  2552                           ; Regs used in _Initialize: [wreg+status,2+status,0]
+  2553  0312  307A               	movlw	122
+  2554  0313  0021               	movlb	1	; select bank1
+  2555  0314  0099               	movwf	25	;volatile
+  2556                           
+  2557                           ;Main.c: 266: WDTCON = 0x0e;
+  2558  0315  300E               	movlw	14
+  2559  0316  0097               	movwf	23	;volatile
+  2560                           
+  2561                           ;Main.c: 267: ANSELA = 0;
+  2562  0317  0023               	movlb	3	; select bank3
+  2563  0318  018C               	clrf	12	;volatile
+  2564                           
+  2565                           ;Main.c: 270: TRISA = 0b00010100;
+  2566  0319  3014               	movlw	20
+  2567  031A  0021               	movlb	1	; select bank1
+  2568  031B  008C               	movwf	12	;volatile
+  2569                           
+  2570                           ;Main.c: 271: WPUA = 0b00000100;
+  2571  031C  3004               	movlw	4
+  2572  031D  0024               	movlb	4	; select bank4
+  2573  031E  008C               	movwf	12	;volatile
+  2574                           
+  2575                           ;Main.c: 272: PORTA = 0b00100000;
+  2576  031F  3020               	movlw	32
+  2577  0320  0020               	movlb	0	; select bank0
+  2578  0321  008C               	movwf	12	;volatile
+  2579                           
+  2580                           ;Main.c: 275: OPTION_REGbits.TMR0CS = 0;
+  2581  0322  0021               	movlb	1	; select bank1
+  2582  0323  1295               	bcf	21,5	;volatile
+  2583                           
+  2584                           ;Main.c: 276: OPTION_REGbits.PS = 0;
+  2585  0324  30F8               	movlw	-8
+  2586  0325  0595               	andwf	21,f	;volatile
+  2587                           
+  2588                           ;Main.c: 277: OPTION_REGbits.PSA = 0;
+  2589  0326  1195               	bcf	21,3	;volatile
+  2590                           
+  2591                           ;Main.c: 279: TMR0 = 64;
+  2592  0327  3040               	movlw	64
+  2593  0328  0020               	movlb	0	; select bank0
+  2594  0329  0095               	movwf	21	;volatile
+  2595                           
+  2596                           ;Main.c: 280: INTCONbits.TMR0IE = 1;
+  2597  032A  168B               	bsf	11,5	;volatile
+  2598                           
+  2599                           ;Main.c: 281: INTCONbits.GIE = 1;
+  2600  032B  178B               	bsf	11,7	;volatile
+  2601                           
+  2602                           ;Main.c: 284: PR2 = 69 - 1;
+  2603  032C  3044               	movlw	68
+  2604  032D  009B               	movwf	27	;volatile
+  2605                           
+  2606                           ;Main.c: 285: T2CON = 0b00000111;
+  2607  032E  3007               	movlw	7
+  2608  032F  009C               	movwf	28	;volatile
+  2609                           
+  2610                           ;Main.c: 289: PWM4CON = 0xd0;
+  2611  0330  30D0               	movlw	208
+  2612  0331  002C               	movlb	12	; select bank12
+  2613  0332  009C               	movwf	28	;volatile
+  2614  0333  0008               	return
+  2615  0334                     __end_of_Initialize:	
+  2616                           
+  2617                           	psect	text13
+  2618  03AF                     __ptext13:	
+  2619 ;; *************** function _CheckIr *****************
+  2620 ;; Defined at:
+  2621 ;;		line 7 in file "sur/IrReceive.c"
+  2622 ;; Parameters:    Size  Location     Type
+  2623 ;;		None
+  2624 ;; Auto vars:     Size  Location     Type
+  2625 ;;		None
+  2626 ;; Return value:  Size  Location     Type
+  2627 ;;                  1    wreg      unsigned char 
+  2628 ;; Registers used:
+  2629 ;;		wreg
+  2630 ;; Tracked objects:
+  2631 ;;		On entry : 0/0
+  2632 ;;		On exit  : 0/0
+  2633 ;;		Unchanged: 0/0
+  2634 ;; Data sizes:     COMMON   BANK0
+  2635 ;;      Params:         0       0
+  2636 ;;      Locals:         0       0
+  2637 ;;      Temps:          2       0
+  2638 ;;      Totals:         2       0
+  2639 ;;Total ram usage:        2 bytes
+  2640 ;; Hardware stack levels used:    1
+  2641 ;; Hardware stack levels required when called:    2
+  2642 ;; This function calls:
+  2643 ;;		Nothing
+  2644 ;; This function is called by:
+  2645 ;;		_main
+  2646 ;; This function uses a non-reentrant model
+  2647 ;;
+  2648                           
+  2649                           
+  2650                           ;psect for function _CheckIr
+  2651  03AF                     _CheckIr:	
+  2652                           
+  2653                           ;IrReceive.c: 9: if(RcvFlg==1)
+  2654                           
+  2655                           ;incstack = 0
+  2656                           ; Regs used in _CheckIr: [wreg]
+  2657  03AF  1E76               	btfss	_RcvFlg/(0+8),_RcvFlg& (0+7)
+  2658  03B0  2BC4               	goto	l1099
+  2659                           
+  2660                           ;IrReceive.c: 10: {
+  2661                           ;IrReceive.c: 11: if(IrData.Buf3==0xF5 && (IrData.Buf1+IrData.Buf2)==0xff)
+  2662  03B1  0020               	movlb	0	; select bank0
+  2663  03B2  0829               	movf	_IrData+2,w	;volatile
+  2664  03B3  3AF5               	xorlw	245
+  2665  03B4  1D03               	skipz
+  2666  03B5  2BC3               	goto	l20
+  2667  03B6  0827               	movf	_IrData,w	;volatile
+  2668  03B7  0728               	addwf	_IrData+1,w	;volatile
+  2669  03B8  00F4               	movwf	??_CheckIr
+  2670  03B9  01F5               	clrf	??_CheckIr+1
+  2671  03BA  0DF5               	rlf	??_CheckIr+1,f
+  2672  03BB  30FF               	movlw	255
+  2673  03BC  0674               	xorwf	??_CheckIr,w
+  2674  03BD  0475               	iorwf	??_CheckIr+1,w
+  2675  03BE  1D03               	skipz
+  2676  03BF  2BC3               	goto	l20
+  2677                           
+  2678                           ;IrReceive.c: 12: {
+  2679                           ;IrReceive.c: 14: RcvFlg=0;
+  2680  03C0  1276               	bcf	_RcvFlg/(0+8),_RcvFlg& (0+7)
+  2681                           
+  2682                           ;IrReceive.c: 15: return(1);
+  2683  03C1  3001               	movlw	1
+  2684  03C2  0008               	return
+  2685  03C3                     l20:	
+  2686                           
+  2687                           ;IrReceive.c: 16: }
+  2688                           ;IrReceive.c: 17: RcvFlg=0;
+  2689  03C3  1276               	bcf	_RcvFlg/(0+8),_RcvFlg& (0+7)
+  2690  03C4                     l1099:	
+  2691                           
+  2692                           ;IrReceive.c: 18: }
+  2693                           ;IrReceive.c: 19: return(0);
+  2694  03C4  3000               	movlw	0
+  2695  03C5  0008               	return
+  2696  03C6                     __end_of_CheckIr:	
+  2697                           
+  2698                           	psect	intentry
+  2699  0004                     __pintentry:	
+  2700 ;; *************** function _ISR *****************
+  2701 ;; Defined at:
+  2702 ;;		line 305 in file "sur/Main.c"
+  2703 ;; Parameters:    Size  Location     Type
+  2704 ;;		None
+  2705 ;; Auto vars:     Size  Location     Type
+  2706 ;;		None
+  2707 ;; Return value:  Size  Location     Type
+  2708 ;;		None               void
+  2709 ;; Registers used:
+  2710 ;;		wreg, status,2, status,0, pclath, cstack
+  2711 ;; Tracked objects:
+  2712 ;;		On entry : 0/0
+  2713 ;;		On exit  : 0/0
+  2714 ;;		Unchanged: 0/0
+  2715 ;; Data sizes:     COMMON   BANK0
+  2716 ;;      Params:         0       0
+  2717 ;;      Locals:         0       0
+  2718 ;;      Temps:          3       0
+  2719 ;;      Totals:         3       0
+  2720 ;;Total ram usage:        3 bytes
+  2721 ;; Hardware stack levels used:    1
+  2722 ;; Hardware stack levels required when called:    1
+  2723 ;; This function calls:
+  2724 ;;		_IrRcv
+  2725 ;; This function is called by:
+  2726 ;;		Interrupt level 1
+  2727 ;; This function uses a non-reentrant model
+  2728 ;;
+  2729                           
+  2730  0004                     _ISR:	
+  2731                           
+  2732                           ;incstack = 0
+  2733                           ; Regs used in _ISR: [wreg+status,2+status,0+pclath+cstack]
+  2734  0004  3180               	pagesel	$
+  2735  0005  0020               	movlb	0	; select bank0
+  2736  0006  087F               	movf	127,w
+  2737  0007  00F3               	movwf	??_ISR+2
+  2738                           
+  2739                           ;Main.c: 307: if(INTCONbits.TMR0IF == 1)
+  2740  0008  1D0B               	btfss	11,2	;volatile
+  2741  0009  2847               	goto	i1l191
+  2742                           
+  2743                           ;Main.c: 308: {
+  2744                           ;Main.c: 310: TMR0=64;
+  2745  000A  3040               	movlw	64
+  2746  000B  0095               	movwf	21	;volatile
+  2747                           
+  2748                           ;Main.c: 311: if(Bz.BzSwitchFlg==1)
+  2749  000C  1C26               	btfss	_Bz+6,0
+  2750  000D  283A               	goto	i1l1497
+  2751                           
+  2752                           ;Main.c: 312: {
+  2753                           ;Main.c: 313: if(Bz.LongCnt++<=Bz.Long)
+  2754  000E  0821               	movf	_Bz+1,w
+  2755  000F  00F2               	movwf	??_ISR+1
+  2756  0010  0820               	movf	_Bz,w
+  2757  0011  00F1               	movwf	??_ISR
+  2758  0012  0AA0               	incf	_Bz,f
+  2759  0013  1903               	skipnz
+  2760  0014  0AA1               	incf	_Bz+1,f
+  2761  0015  0872               	movf	??_ISR+1,w
+  2762  0016  0223               	subwf	_Bz+3,w
+  2763  0017  1D03               	skipz
+  2764  0018  281B               	goto	u119_25
+  2765  0019  0871               	movf	??_ISR,w
+  2766  001A  0222               	subwf	_Bz+2,w
+  2767  001B                     u119_25:	
+  2768  001B  1C03               	skipc
+  2769  001C  281F               	goto	i1l186
+  2770                           
+  2771                           ;Main.c: 314: PORTAbits.RA0=1;
+  2772  001D  140C               	bsf	12,0	;volatile
+  2773  001E  2820               	goto	i1l1487
+  2774  001F                     i1l186:	
+  2775                           
+  2776                           ;Main.c: 315: else
+  2777                           ;Main.c: 316: {
+  2778                           ;Main.c: 317: PORTAbits.RA0=0;
+  2779  001F  100C               	bcf	12,0	;volatile
+  2780  0020                     i1l1487:	
+  2781                           
+  2782                           ;Main.c: 318: }
+  2783                           ;Main.c: 319: if(Bz.LongCnt>=(Bz.Long+700))
+  2784  0020  0822               	movf	_Bz+2,w
+  2785  0021  3EBC               	addlw	188
+  2786  0022  00F1               	movwf	??_ISR
+  2787  0023  3002               	movlw	2
+  2788  0024  3D23               	addwfc	_Bz+3,w
+  2789  0025  00F2               	movwf	??_ISR+1
+  2790  0026  0872               	movf	??_ISR+1,w
+  2791  0027  0221               	subwf	_Bz+1,w
+  2792  0028  1D03               	skipz
+  2793  0029  282C               	goto	u120_25
+  2794  002A  0871               	movf	??_ISR,w
+  2795  002B  0220               	subwf	_Bz,w
+  2796  002C                     u120_25:	
+  2797  002C  1C03               	skipc
+  2798  002D  283A               	goto	i1l1497
+  2799                           
+  2800                           ;Main.c: 320: {
+  2801                           ;Main.c: 321: Bz.LongCnt=0;
+  2802  002E  01A0               	clrf	_Bz
+  2803  002F  01A1               	clrf	_Bz+1
+  2804                           
+  2805                           ;Main.c: 322: Bz.TimesCnt+=1;
+  2806  0030  3001               	movlw	1
+  2807  0031  00F1               	movwf	??_ISR
+  2808  0032  0871               	movf	??_ISR,w
+  2809  0033  07A4               	addwf	_Bz+4,f
+  2810                           
+  2811                           ;Main.c: 323: if(Bz.TimesCnt>=Bz.Times)
+  2812  0034  0825               	movf	_Bz+5,w
+  2813  0035  0224               	subwf	_Bz+4,w
+  2814  0036  1C03               	skipc
+  2815  0037  283A               	goto	i1l1497
+  2816                           
+  2817                           ;Main.c: 324: {
+  2818                           ;Main.c: 325: Bz.BzSwitchFlg=0;
+  2819  0038  1026               	bcf	_Bz+6,0
+  2820                           
+  2821                           ;Main.c: 326: PORTAbits.RA0=0;
+  2822  0039  100C               	bcf	12,0	;volatile
+  2823  003A                     i1l1497:	
+  2824                           
+  2825                           ;Main.c: 327: }
+  2826                           ;Main.c: 328: }
+  2827                           ;Main.c: 329: }
+  2828                           ;Main.c: 330: IrRcv();
+  2829  003A  2130               	fcall	_IrRcv
+  2830                           
+  2831                           ;Main.c: 331: Ms10Cnt+=1;
+  2832  003B  3001               	movlw	1
+  2833  003C  00F1               	movwf	??_ISR
+  2834  003D  0871               	movf	??_ISR,w
+  2835  003E  0020               	movlb	0	; select bank0
+  2836  003F  07B2               	addwf	_Ms10Cnt,f
+  2837                           
+  2838                           ;Main.c: 332: if(Ms10Cnt>=100)
+  2839  0040  3064               	movlw	100
+  2840  0041  0232               	subwf	_Ms10Cnt,w
+  2841  0042  1C03               	skipc
+  2842  0043  2846               	goto	i1l1507
+  2843                           
+  2844                           ;Main.c: 333: {
+  2845                           ;Main.c: 334: Ms10Cnt=0;
+  2846  0044  01B2               	clrf	_Ms10Cnt
+  2847                           
+  2848                           ;Main.c: 335: Ms10flag=1;
+  2849  0045  1576               	bsf	_Ms10flag/(0+8),_Ms10flag& (0+7)
+  2850  0046                     i1l1507:	
+  2851                           
+  2852                           ;Main.c: 336: }
+  2853                           ;Main.c: 337: INTCONbits.TMR0IF = 0;
+  2854  0046  110B               	bcf	11,2	;volatile
+  2855  0047                     i1l191:	
+  2856  0047  0873               	movf	??_ISR+2,w
+  2857  0048  00FF               	movwf	127
+  2858  0049  0009               	retfie
+  2859  004A                     __end_of_ISR:	
+  2860                           
+  2861                           	psect	text15
+  2862  0130                     __ptext15:	
+  2863 ;; *************** function _IrRcv *****************
+  2864 ;; Defined at:
+  2865 ;;		line 22 in file "sur/IrReceive.c"
+  2866 ;; Parameters:    Size  Location     Type
+  2867 ;;		None
+  2868 ;; Auto vars:     Size  Location     Type
+  2869 ;;		None
+  2870 ;; Return value:  Size  Location     Type
+  2871 ;;		None               void
+  2872 ;; Registers used:
+  2873 ;;		wreg, status,2, status,0
+  2874 ;; Tracked objects:
+  2875 ;;		On entry : 0/0
+  2876 ;;		On exit  : 0/0
+  2877 ;;		Unchanged: 0/0
+  2878 ;; Data sizes:     COMMON   BANK0
+  2879 ;;      Params:         0       0
+  2880 ;;      Locals:         0       0
+  2881 ;;      Temps:          1       0
+  2882 ;;      Totals:         1       0
+  2883 ;;Total ram usage:        1 bytes
+  2884 ;; Hardware stack levels used:    1
+  2885 ;; This function calls:
+  2886 ;;		Nothing
+  2887 ;; This function is called by:
+  2888 ;;		_ISR
+  2889 ;; This function uses a non-reentrant model
+  2890 ;;
+  2891                           
+  2892                           
+  2893                           ;psect for function _IrRcv
+  2894  0130                     _IrRcv:	
+  2895                           
+  2896                           ;IrReceive.c: 24: if(RcvFlg==1) return;
+  2897                           
+  2898                           ;incstack = 0
+  2899                           ; Regs used in _IrRcv: [wreg+status,2+status,0]
+  2900  0130  1A76               	btfsc	_RcvFlg/(0+8),_RcvFlg& (0+7)
+  2901  0131  0008               	return
+  2902                           
+  2903                           ;IrReceive.c: 25: if(PORTAbits.RA2==1)
+  2904  0132  0020               	movlb	0	; select bank0
+  2905  0133  1D0C               	btfss	12,2	;volatile
+  2906  0134  293B               	goto	i1l1111
+  2907                           
+  2908                           ;IrReceive.c: 26: {
+  2909                           ;IrReceive.c: 27: Pcount.High+=1;
+  2910  0135  3001               	movlw	1
+  2911  0136  00F0               	movwf	??_IrRcv
+  2912  0137  0870               	movf	??_IrRcv,w
+  2913  0138  07F7               	addwf	_Pcount,f
+  2914                           
+  2915                           ;IrReceive.c: 28: PlowFlg=1;
+  2916  0139  15F6               	bsf	_PlowFlg/(0+8),_PlowFlg& (0+7)
+  2917                           
+  2918                           ;IrReceive.c: 29: }
+  2919  013A  0008               	return
+  2920  013B                     i1l1111:	
+  2921                           
+  2922                           ;IrReceive.c: 30: else
+  2923                           ;IrReceive.c: 31: {
+  2924                           ;IrReceive.c: 32: Pcount.Low+=1;
+  2925  013B  3001               	movlw	1
+  2926  013C  00F0               	movwf	??_IrRcv
+  2927  013D  0870               	movf	??_IrRcv,w
+  2928  013E  07F8               	addwf	_Pcount+1,f
+  2929                           
+  2930                           ;IrReceive.c: 33: if(PlowFlg)
+  2931  013F  1DF6               	btfss	_PlowFlg/(0+8),_PlowFlg& (0+7)
+  2932  0140  0008               	return
+  2933                           
+  2934                           ;IrReceive.c: 34: {
+  2935                           ;IrReceive.c: 35: if(LeadFlg==0)
+  2936  0141  18F6               	btfsc	_LeadFlg/(0+8),_LeadFlg& (0+7)
+  2937  0142  295E               	goto	i1l29
+  2938                           
+  2939                           ;IrReceive.c: 36: {
+  2940                           ;IrReceive.c: 37: if((Pcount.Low>=28)&&(Pcount.Low<=40))
+  2941  0143  301C               	movlw	28
+  2942  0144  0278               	subwf	_Pcount+1,w
+  2943  0145  1C03               	skipc
+  2944  0146  29AF               	goto	i1l36
+  2945  0147  3029               	movlw	41
+  2946  0148  0278               	subwf	_Pcount+1,w
+  2947  0149  1803               	skipnc
+  2948  014A  29AF               	goto	i1l36
+  2949                           
+  2950                           ;IrReceive.c: 38: {
+  2951                           ;IrReceive.c: 39: if((Pcount.High>=14)&&(Pcount.High<=20))
+  2952  014B  300E               	movlw	14
+  2953  014C  0277               	subwf	_Pcount,w
+  2954  014D  1C03               	skipc
+  2955  014E  29AF               	goto	i1l36
+  2956  014F  3015               	movlw	21
+  2957  0150  0277               	subwf	_Pcount,w
+  2958  0151  1803               	skipnc
+  2959  0152  29AF               	goto	i1l36
+  2960                           
+  2961                           ;IrReceive.c: 40: {
+  2962                           ;IrReceive.c: 41: LeadFlg=1;
+  2963  0153  14F6               	bsf	_LeadFlg/(0+8),_LeadFlg& (0+7)
+  2964                           
+  2965                           ;IrReceive.c: 42: IrData.Long=0;
+  2966  0154  3000               	movlw	0
+  2967  0155  00AA               	movwf	_IrData+3	;volatile
+  2968  0156  3000               	movlw	0
+  2969  0157  00A9               	movwf	_IrData+2	;volatile
+  2970  0158  3000               	movlw	0
+  2971  0159  00A8               	movwf	_IrData+1	;volatile
+  2972  015A  3000               	movlw	0
+  2973  015B  00A7               	movwf	_IrData	;volatile
+  2974                           
+  2975                           ;IrReceive.c: 43: RecvN=0;
+  2976  015C  01F9               	clrf	_RecvN
+  2977                           
+  2978                           ;IrReceive.c: 44: }
+  2979  015D  29B0               	goto	i1l34
+  2980  015E                     i1l29:	
+  2981                           ;IrReceive.c: 48: }
+  2982                           
+  2983                           ;IrReceive.c: 47: else LeadFlg=0;
+  2984                           
+  2985                           ;IrReceive.c: 46: }
+  2986                           
+  2987                           ;IrReceive.c: 45: else LeadFlg=0;
+  2988                           
+  2989                           
+  2990                           ;IrReceive.c: 49: else if(LeadFlg==1)
+  2991  015E  1CF6               	btfss	_LeadFlg/(0+8),_LeadFlg& (0+7)
+  2992  015F  29B0               	goto	i1l34
+  2993                           
+  2994                           ;IrReceive.c: 50: {
+  2995                           ;IrReceive.c: 51: if((Pcount.Low>=3)&&(Pcount.Low<=6))
+  2996  0160  3003               	movlw	3
+  2997  0161  0278               	subwf	_Pcount+1,w
+  2998  0162  1C03               	skipc
+  2999  0163  29AF               	goto	i1l36
+  3000  0164  3007               	movlw	7
+  3001  0165  0278               	subwf	_Pcount+1,w
+  3002  0166  1803               	skipnc
+  3003  0167  29AF               	goto	i1l36
+  3004                           
+  3005                           ;IrReceive.c: 52: {
+  3006                           ;IrReceive.c: 53: if((Pcount.High>=10)&&(Pcount.High<=15))
+  3007  0168  300A               	movlw	10
+  3008  0169  0277               	subwf	_Pcount,w
+  3009  016A  1C03               	skipc
+  3010  016B  2979               	goto	i1l1143
+  3011  016C  3010               	movlw	16
+  3012  016D  0277               	subwf	_Pcount,w
+  3013  016E  1803               	skipnc
+  3014  016F  2979               	goto	i1l1143
+  3015                           
+  3016                           ;IrReceive.c: 54: {
+  3017                           ;IrReceive.c: 55: IrData.Long<<=1;
+  3018  0170  3001               	movlw	1
+  3019  0171                     u78_25:	
+  3020  0171  35A7               	lslf	_IrData,f	;volatile
+  3021  0172  0DA8               	rlf	_IrData+1,f	;volatile
+  3022  0173  0DA9               	rlf	_IrData+2,f	;volatile
+  3023  0174  0DAA               	rlf	_IrData+3,f	;volatile
+  3024  0175  0B89               	decfsz	9,f
+  3025  0176  2971               	goto	u78_25
+  3026                           
+  3027                           ;IrReceive.c: 56: IrData.Long|=0x00000001;
+  3028  0177  1427               	bsf	_IrData,0	;volatile
+  3029  0178  2990               	goto	i1l1151
+  3030  0179                     i1l1143:	
+  3031                           ;IrReceive.c: 58: }
+  3032                           
+  3033                           ;IrReceive.c: 57: RecvN+=1;
+  3034                           
+  3035                           
+  3036                           ;IrReceive.c: 59: else if((Pcount.High>=3)&&(Pcount.High<=6))
+  3037  0179  3003               	movlw	3
+  3038  017A  0277               	subwf	_Pcount,w
+  3039  017B  1C03               	skipc
+  3040  017C  2995               	goto	i1l39
+  3041  017D  3007               	movlw	7
+  3042  017E  0277               	subwf	_Pcount,w
+  3043  017F  1803               	skipnc
+  3044  0180  2995               	goto	i1l39
+  3045                           
+  3046                           ;IrReceive.c: 60: {
+  3047                           ;IrReceive.c: 61: IrData.Long<<=1;
+  3048  0181  3001               	movlw	1
+  3049  0182                     u81_25:	
+  3050  0182  35A7               	lslf	_IrData,f	;volatile
+  3051  0183  0DA8               	rlf	_IrData+1,f	;volatile
+  3052  0184  0DA9               	rlf	_IrData+2,f	;volatile
+  3053  0185  0DAA               	rlf	_IrData+3,f	;volatile
+  3054  0186  0B89               	decfsz	9,f
+  3055  0187  2982               	goto	u81_25
+  3056                           
+  3057                           ;IrReceive.c: 62: IrData.Long&=0xfffffffe;
+  3058  0188  30FE               	movlw	254
+  3059  0189  05A7               	andwf	_IrData,f	;volatile
+  3060  018A  30FF               	movlw	255
+  3061  018B  05A8               	andwf	_IrData+1,f	;volatile
+  3062  018C  30FF               	movlw	255
+  3063  018D  05A9               	andwf	_IrData+2,f	;volatile
+  3064  018E  30FF               	movlw	255
+  3065  018F  05AA               	andwf	_IrData+3,f	;volatile
+  3066  0190                     i1l1151:	
+  3067                           
+  3068                           ;IrReceive.c: 63: RecvN+=1;
+  3069  0190  3001               	movlw	1
+  3070  0191  00F0               	movwf	??_IrRcv
+  3071  0192  0870               	movf	??_IrRcv,w
+  3072  0193  07F9               	addwf	_RecvN,f
+  3073                           
+  3074                           ;IrReceive.c: 64: }
+  3075  0194  2996               	goto	i1l1153
+  3076  0195                     i1l39:	
+  3077                           
+  3078                           ;IrReceive.c: 65: else LeadFlg=0;
+  3079  0195  10F6               	bcf	_LeadFlg/(0+8),_LeadFlg& (0+7)
+  3080  0196                     i1l1153:	
+  3081                           
+  3082                           ;IrReceive.c: 66: if(RecvN==16 && IrData.Long!=0xAE48) LeadFlg=0;
+  3083  0196  0879               	movf	_RecvN,w
+  3084  0197  3A10               	xorlw	16
+  3085  0198  1D03               	skipz
+  3086  0199  29AA               	goto	i1l1159
+  3087  019A  3000               	movlw	0
+  3088  019B  062A               	xorwf	_IrData+3,w	;volatile
+  3089  019C  1D03               	skipz
+  3090  019D  29A8               	goto	u83_25
+  3091  019E  3000               	movlw	0
+  3092  019F  0629               	xorwf	_IrData+2,w	;volatile
+  3093  01A0  1D03               	skipz
+  3094  01A1  29A8               	goto	u83_25
+  3095  01A2  30AE               	movlw	174
+  3096  01A3  0628               	xorwf	_IrData+1,w	;volatile
+  3097  01A4  1D03               	skipz
+  3098  01A5  29A8               	goto	u83_25
+  3099  01A6  3048               	movlw	72
+  3100  01A7  0627               	xorwf	_IrData,w	;volatile
+  3101  01A8                     u83_25:	
+  3102  01A8  1D03               	btfss	3,2
+  3103  01A9  29AF               	goto	i1l36
+  3104  01AA                     i1l1159:	
+  3105                           
+  3106                           ;IrReceive.c: 67: else if(RecvN==48)
+  3107  01AA  0879               	movf	_RecvN,w
+  3108  01AB  3A30               	xorlw	48
+  3109  01AC  1D03               	skipz
+  3110  01AD  29B0               	goto	i1l34
+  3111                           
+  3112                           ;IrReceive.c: 68: {RcvFlg=1;LeadFlg=0;}
+  3113  01AE  1676               	bsf	_RcvFlg/(0+8),_RcvFlg& (0+7)
+  3114  01AF                     i1l36:	
+  3115                           ;IrReceive.c: 69: }
+  3116                           
+  3117                           
+  3118                           ;IrReceive.c: 70: else LeadFlg=0;
+  3119  01AF  10F6               	bcf	_LeadFlg/(0+8),_LeadFlg& (0+7)
+  3120  01B0                     i1l34:	
+  3121                           
+  3122                           ;IrReceive.c: 71: }
+  3123                           ;IrReceive.c: 72: PlowFlg=0;
+  3124  01B0  11F6               	bcf	_PlowFlg/(0+8),_PlowFlg& (0+7)
+  3125                           
+  3126                           ;IrReceive.c: 73: Pcount.High=0;
+  3127  01B1  01F7               	clrf	_Pcount
+  3128                           
+  3129                           ;IrReceive.c: 74: Pcount.Low=0;
+  3130  01B2  01F8               	clrf	_Pcount+1
+  3131  01B3  0008               	return
+  3132  01B4                     __end_of_IrRcv:	
+  3133  007E                     btemp	set	126	;btemp
+  3134  007E                     wtemp	set	126
+  3135  007E                     wtemp0	set	126
+  3136  0080                     wtemp1	set	128
+  3137  0082                     wtemp2	set	130
+  3138  0084                     wtemp3	set	132
+  3139  0086                     wtemp4	set	134
+  3140  0088                     wtemp5	set	136
+  3141  007F                     wtemp6	set	127
+  3142  007E                     ttemp	set	126
+  3143  007E                     ttemp0	set	126
+  3144  0081                     ttemp1	set	129
+  3145  0084                     ttemp2	set	132
+  3146  0087                     ttemp3	set	135
+  3147  007F                     ttemp4	set	127
+  3148  007E                     ltemp	set	126
+  3149  007E                     ltemp0	set	126
+  3150  0082                     ltemp1	set	130
+  3151  0086                     ltemp2	set	134
+  3152  0080                     ltemp3	set	128
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         23
+    Persistent  2
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      6      10
+    BANK0            48     13      35
+
+Pointer List with Targets:
+
+    flash_memory_write@data	PTR unsigned char  size(1) Largest target is 1
+		 -> SaveDataToFlash@AddrTemp(BANK0[1]), DimmingNum(BANK0[1]), 
+
+
+Critical Paths under _main in COMMON
+
+    _main->_CheckIr
+    _main->___wmul
+    _TimeBase->_GetIrAN
+    _IrDeal->_BzSet
+    _IrDeal->___wmul
+    _WritePwmPercentage->___wmul
+    _SaveDataToFlash->_flash_memory_erase
+    _SaveDataToFlash->_flash_memory_read
+    _SaveDataToFlash->_flash_memory_write
+    _ReadDataFromFlash->_flash_memory_read
+
+Critical Paths under _ISR in COMMON
+
+    _ISR->_IrRcv
+
+Critical Paths under _main in BANK0
+
+    _main->_IrDeal
+    _TimeBase->_WritePwmPercentage
+    _IrDeal->_WritePwmPercentage
+    _WritePwmPercentage->___wmul
+    _SaveDataToFlash->_flash_memory_write
+    _ReadDataFromFlash->_flash_memory_read
+
+Critical Paths under _ISR in BANK0
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0    4547
+                                             11 BANK0      2     2      0
+                            _CheckIr
+                         _Initialize
+                             _IrDeal
+                  _ReadDataFromFlash
+                           _TimeBase
+                 _WritePwmPercentage
+                             ___wmul
+ ---------------------------------------------------------------------------------
+ (1) _TimeBase                                             1     1      0     504
+                                              9 BANK0      1     1      0
+                            _GetIrAN
+                 _WritePwmPercentage
+ ---------------------------------------------------------------------------------
+ (2) _GetIrAN                                              2     2      0      25
+                                              4 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ (1) _IrDeal                                               2     2      0    2953
+                                              9 BANK0      2     2      0
+                              _BzSet
+                  _ReadDataFromFlash
+                    _SaveDataToFlash
+                 _WritePwmPercentage
+                             ___wmul
+ ---------------------------------------------------------------------------------
+ (1) ___wmul                                               6     2      4     444
+                                              4 COMMON     2     2      0
+                                              0 BANK0      4     0      4
+ ---------------------------------------------------------------------------------
+ (1) _WritePwmPercentage                                   5     3      2     479
+                                              4 BANK0      5     3      2
+                             ___wmul (ARG)
+ ---------------------------------------------------------------------------------
+ (2) _SaveDataToFlash                                      2     2      0     877
+                                              6 BANK0      2     2      0
+                 _flash_memory_erase
+                  _flash_memory_read
+                 _flash_memory_write
+ ---------------------------------------------------------------------------------
+ (3) _flash_memory_write                                   8     6      2     540
+                                              4 COMMON     2     0      2
+                                              0 BANK0      6     6      0
+ ---------------------------------------------------------------------------------
+ (3) _flash_memory_erase                                   5     5      0      99
+                                              4 COMMON     2     2      0
+                                              0 BANK0      3     3      0
+ ---------------------------------------------------------------------------------
+ (1) _ReadDataFromFlash                                    2     2      0     167
+                                              3 BANK0      2     2      0
+                  _flash_memory_read
+ ---------------------------------------------------------------------------------
+ (2) _flash_memory_read                                    5     5      0      99
+                                              4 COMMON     2     2      0
+                                              0 BANK0      3     3      0
+ ---------------------------------------------------------------------------------
+ (2) _BzSet                                                4     2      2     986
+                                              4 COMMON     2     0      2
+                                              0 BANK0      2     2      0
+ ---------------------------------------------------------------------------------
+ (1) _Initialize                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _CheckIr                                              2     2      0       0
+                                              4 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (4) _ISR                                                  3     3      0       0
+                                              1 COMMON     3     3      0
+                              _IrRcv
+ ---------------------------------------------------------------------------------
+ (5) _IrRcv                                                1     1      0       0
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 5
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _CheckIr
+   _Initialize
+   _IrDeal
+     _BzSet
+     _ReadDataFromFlash
+       _flash_memory_read
+     _SaveDataToFlash
+       _flash_memory_erase
+       _flash_memory_read
+       _flash_memory_write
+     _WritePwmPercentage
+       ___wmul (ARG)
+     ___wmul
+   _ReadDataFromFlash
+     _flash_memory_read
+   _TimeBase
+     _GetIrAN
+     _WritePwmPercentage
+       ___wmul (ARG)
+   _WritePwmPercentage
+     ___wmul (ARG)
+   ___wmul
+
+ _ISR (ROOT)
+   _IrRcv
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM_1            10      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BIGRAM              30      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITCOMMON            E      0       1       2        7.1%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+COMMON               E      6       A       3       71.4%
+BITSFR2              0      0       0       3        0.0%
+SFR2                 0      0       0       3        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+STACK                0      0       0       4        0.0%
+BITBANK0            30      0       0       5        0.0%
+BITSFR4              0      0       0       5        0.0%
+SFR4                 0      0       0       5        0.0%
+BANK0               30      D      23       6       72.9%
+BITSFR5              0      0       0       6        0.0%
+SFR5                 0      0       0       6        0.0%
+BITSFR6              0      0       0       7        0.0%
+SFR6                 0      0       0       7        0.0%
+ABS                  0      0      2D       7        0.0%
+BITSFR7              0      0       0       8        0.0%
+SFR7                 0      0       0       8        0.0%
+DATA                 0      0      2D       8        0.0%
+BITSFR8              0      0       0       9        0.0%
+SFR8                 0      0       0       9        0.0%
+BITSFR9              0      0       0      10        0.0%
+SFR9                 0      0       0      10        0.0%
+BITSFR10             0      0       0      11        0.0%
+SFR10                0      0       0      11        0.0%
+BITSFR11             0      0       0      12        0.0%
+SFR11                0      0       0      12        0.0%
+BITSFR12             0      0       0      13        0.0%
+SFR12                0      0       0      13        0.0%
+BITSFR13             0      0       0      14        0.0%
+SFR13                0      0       0      14        0.0%
+BITSFR14             0      0       0      15        0.0%
+SFR14                0      0       0      15        0.0%
+BITSFR15             0      0       0      16        0.0%
+SFR15                0      0       0      16        0.0%
+BITSFR16             0      0       0      17        0.0%
+SFR16                0      0       0      17        0.0%
+BITSFR17             0      0       0      18        0.0%
+SFR17                0      0       0      18        0.0%
+BITSFR18             0      0       0      19        0.0%
+SFR18                0      0       0      19        0.0%
+BITSFR19             0      0       0      20        0.0%
+SFR19                0      0       0      20        0.0%
+BITSFR20             0      0       0      21        0.0%
+SFR20                0      0       0      21        0.0%
+BITSFR21             0      0       0      22        0.0%
+SFR21                0      0       0      22        0.0%
+BITSFR22             0      0       0      23        0.0%
+SFR22                0      0       0      23        0.0%
+BITSFR23             0      0       0      24        0.0%
+SFR23                0      0       0      24        0.0%
+BITSFR24             0      0       0      25        0.0%
+SFR24                0      0       0      25        0.0%
+BITSFR25             0      0       0      26        0.0%
+SFR25                0      0       0      26        0.0%
+BITSFR26             0      0       0      27        0.0%
+SFR26                0      0       0      27        0.0%
+BITSFR27             0      0       0      28        0.0%
+SFR27                0      0       0      28        0.0%
+BITSFR28             0      0       0      29        0.0%
+SFR28                0      0       0      29        0.0%
+BITSFR29             0      0       0      30        0.0%
+SFR29                0      0       0      30        0.0%
+BITSFR30             0      0       0      31        0.0%
+SFR30                0      0       0      31        0.0%
+BITSFR31             0      0       0      32        0.0%
+SFR31                0      0       0      32        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.30 build 55553 
+Symbol Table                                                                                   Mon Apr 21 10:14:36 2014
+
+                 __CFG_CP$OFF 0000                            l20 03C3                            _Bz 0020  
+         ___wmul@multiplicand 0036                           l111 034D                           l212 01C1  
+                         l124 038F                           l143 012F                           l242 024D  
+                         l244 0273                           l156 00CC                           l148 0113  
+                         l601 039A                           _PR2 001B                           _ISR 0004  
+                         u905 01F0                           u925 020C                           u945 0228  
+                         u885 01D4                           u985 02D5                  __CFG_BORV$LO 0000  
+                         wreg 0009                  __CFG_LVP$OFF 0000                          ?_ISR 0070  
+                        l1221 01F8                          l1225 0214                          l1217 01DC  
+                        l1601 00EE                          l1099 03C4                          l1611 011A  
+                        l1531 005D                          l1347 0382                          l1621 0293  
+                        l1541 0078                          l1623 0297                          l1551 0094  
+                        l1537 006C                          l1609 00F8                          l1547 0088  
+                        l1725 0393                          l1575 00BE                          l1567 00B0  
+                        l1559 00A2                          l1595 00E1                          l1589 00D7  
+                        u1290 0118                          u1365 039B                          u1375 03A0  
+                        i1l34 01B0                          i1l36 01AF                          i1l29 015E  
+                        i1l39 0195                          _TMR0 0015                          _WPUA 020C  
+                        _IrAn 0031                          _main 0334                          fsr0h 0005  
+                        fsr1h 0007                          fsr0l 0004                          indf0 0000  
+                        indf1 0001                          fsr1l 0006                          btemp 007E  
+                        ltemp 007E                          start 004A                          ttemp 007E  
+             __end_of_CheckIr 03C6                          wtemp 007E               __end_of_GetIrAN 0391  
+               __CFG_MCLRE$ON 0000                         ??_ISR 0071                    _DimmingNum 0042  
+                       ?_main 0070                 __CFG_WDTE$OFF 0000                         _T2CON 001C  
+                       _S1Cnt 0033                         i1l191 0047                         i1l186 001F  
+                       _PORTA 000C                         _TRISA 008C                         u81_25 0182  
+                       u83_25 01A8                         u78_25 0171                         _BzSet 03D9  
+                       _IrRcv 0130                 __CFG_PWRTE$ON 0000                 __CFG_WRT$BOOT 0000  
+                       _RecvN 0079             ??_SaveDataToFlash 003A                __pbitbssCOMMON 03B0  
+              __CFG_BOREN$OFF 0000                         ltemp0 007E                         ltemp1 0082  
+                       ltemp2 0086                         ltemp3 0080                         ttemp0 007E  
+                       ttemp1 0081                         ttemp2 0084                         ttemp3 0087  
+                       ttemp4 007F                         wtemp0 007E                         wtemp1 0080  
+                       wtemp2 0082                         wtemp3 0084                         wtemp4 0086  
+                       wtemp5 0088                         wtemp6 007F               __initialization 004B  
+                __end_of_main 0354     flash_memory_erase@AddrBuf 0035                    _Initialize 0312  
+              __CFG_LPBOR$OFF 0000                        ??_main 003F              __end_of_TimeBase 02E4  
+          _flash_memory_erase 02E4                        ?_BzSet 0074                        ?_IrRcv 0070  
+          _flash_memory_write 0230                        _ANSELA 018C           ?_flash_memory_erase 0070  
+                      i1l1111 013B                        i1l1151 0190                        i1l1143 0179  
+                      i1l1153 0196                     ??_CheckIr 0074                        i1l1159 01AA  
+                      i1l1507 0046                        u120_25 002C                        i1l1487 0020  
+                      i1l1497 003A                        u119_25 001B                        _PMADRH 0192  
+                      _PMADRL 0191                        _PMDATH 0194                        _PMDATL 0193  
+                      _PMCON2 0196                     ??_GetIrAN 0074           ?_flash_memory_write 0074  
+                      _OSCCON 0099                        _WDTCON 0097                        _IrDeal 0057  
+                      _IrData 0027                        _RcvFlg 03B4                        _Pcount 0077  
+                      ___wmul 0391          ??_flash_memory_erase 0074          ??_flash_memory_write 0034  
+  __end_of_WritePwmPercentage 0230       __end_of__initialization 0055                 __end_of_BzSet 03EA  
+               __end_of_IrRcv 01B4                __pcstackCOMMON 0070                   ?_Initialize 0070  
+              _OPTION_REGbits 0095                       ??_BzSet 0034                       ??_IrRcv 0070  
+                  __pbssBANK0 0020                       ?_IrDeal 0070                     ?_TimeBase 0070  
+                  __pmaintext 0334                       ?___wmul 0034                    __pintentry 0004  
+             _SaveDataToFlash 0282                       _PWM1DCH 0612                       _PWM1DCL 0611  
+                     _PWM2DCH 0615                       _PWM2DCL 0614                       _PWM3DCH 0618  
+                     _PWM3DCL 0617                       _PWM4DCH 061B                       _PWM4DCL 061A  
+                     _PWM4CON 061C                       _Ms10Cnt 0032                       _CheckIr 03AF  
+                     _GetIrAN 0373           __size_of_Initialize 0022                       _LeadFlg 03B1  
+             __size_of_IrDeal 00D9                    ??_TimeBase 003D                       _PlowFlg 03B3  
+            _DimmingNumBackup 0041  WritePwmPercentage@Percentage 0038               __size_of___wmul 001E  
+             __CFG_STVREN$OFF 0000                       __ptext1 02B5                       __ptext2 0373  
+                     __ptext3 0057                       __ptext4 0391                       __ptext5 01B4  
+                     __ptext6 0282                       __ptext7 0230                       __ptext8 02E4  
+                     __ptext9 03C6                  __size_of_ISR 0046                       clrloop0 03EB  
+        end_of_initialization 0055        flash_memory_erase@Page 0034                     GetIrAN@AN 0075  
+                   BzSet@Long 0074       __end_of_SaveDataToFlash 02B5                     _PORTAbits 000C  
+            __CFG_FOSC$INTOSC 0000     flash_memory_write@AddrBuf 0038     ReadDataFromFlash@AddrTemp 0038  
+          _WritePwmPercentage 01B4           ?_WritePwmPercentage 0038                __end_of_IrDeal 0130  
+   flash_memory_write@address 0036     flash_memory_write@datalen 0075                  ??_Initialize 0074  
+ __size_of_flash_memory_erase 002E                __end_of___wmul 03AF   __size_of_flash_memory_write 0052  
+        ??_WritePwmPercentage 003A           start_initialization 004B                   __end_of_ISR 004A  
+           _flash_memory_read 0354            __end_of_Initialize 0334            ?_flash_memory_read 0070  
+                    ??_IrDeal 003D              ?_SaveDataToFlash 0070           ??_flash_memory_read 0074  
+                    ??___wmul 0074             __size_of_TimeBase 002F                     _TimingCnt 002B  
+                   _TimingNum 002D        flash_memory_write@data 0074                   __pbssCOMMON 0077  
+                   ___latbits 0000             _ReadDataFromFlash 03C6                 __pcstackBANK0 0034  
+          ?_ReadDataFromFlash 0070     __end_of_flash_memory_read 0373                      ?_CheckIr 0070  
+                    ?_GetIrAN 0070           ??_ReadDataFromFlash 0037                     __pnvBANK0 0041  
+        WritePwmPercentage@AN 003C     __end_of_ReadDataFromFlash 03D9                __size_of_BzSet 0011  
+              __size_of_IrRcv 0084                ___wmul@product 0074                     clear_ram0 03EA  
+                    _Ms10flag 03B2             ___wmul@multiplier 0034    __size_of_flash_memory_read 001F  
+            __size_of_CheckIr 0017              __size_of_GetIrAN 001E                      _TimeBase 02B5  
+                 GetIrAN@cnt1 002F                   GetIrAN@cnt2 0030                   IrDeal@Night 03B0  
+       flash_memory_write@wdi 0037    __size_of_ReadDataFromFlash 0013                      __ptext10 0354  
+                    __ptext11 03D9                      __ptext12 0312                      __ptext13 03AF  
+                    __ptext15 0130                 __size_of_main 0020    __end_of_flash_memory_erase 0312  
+    flash_memory_read@AddrBuf 0035    __end_of_flash_memory_write 0282                    _INTCONbits 000B  
+ __size_of_WritePwmPercentage 007C      flash_memory_read@address 0034                      intlevel1 0000  
+     SaveDataToFlash@AddrTemp 003B                    _PMCON1bits 0195                    BzSet@Times 0035  
+           __CFG_CLKOUTEN$OFF 0000      __size_of_SaveDataToFlash 0033  
